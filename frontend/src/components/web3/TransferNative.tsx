@@ -6,7 +6,7 @@ import { Input } from "../ui/input";
 import { Label } from "../ui/label";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../ui/card";
 import { AddressInput } from "./AddressInput";
-import { useToast } from "../../../frontend/src/hooks/use-toast";
+import { useToast } from "../../hooks/use-toast";
 import { isAddress, parseEther } from "viem";
 import { useSendTransaction, useWaitForTransactionReceipt } from "wagmi";
 

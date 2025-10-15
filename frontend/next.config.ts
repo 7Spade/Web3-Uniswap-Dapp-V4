@@ -18,7 +18,7 @@ const nextConfig: NextConfig = {
     
     // 忽略這些模組的警告
     config.ignoreWarnings = [
-      /Module not found: Can't resolve '@react-native-async-storage\\/async-storage'/,
+      /Module not found: Can't resolve '@react-native-async-storage\/async-storage'/,
       /Module not found: Can't resolve 'pino-pretty'/,
     ];
     

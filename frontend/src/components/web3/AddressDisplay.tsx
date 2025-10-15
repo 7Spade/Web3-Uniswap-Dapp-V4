@@ -1,8 +1,8 @@
 "use client";
 
 import { useAccount, useEnsName } from "wagmi";
-import { useWindowSize } from "../../../frontend/src/hooks/use-mobile";
-import { getEllipsisTxt } from "../../../frontend/src/lib/web3-utils";
+import { useWindowSize } from "../../hooks/use-mobile";
+import { getEllipsisTxt } from "../../lib/web3-utils";
 
 interface AddressDisplayProps {
   className?: string;
