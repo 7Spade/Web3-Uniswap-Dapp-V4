@@ -38,7 +38,7 @@ graph TD
 ```javascript
 // Auto-detect package manager and Node.js version
 function detectNodeEcosystem() {
-  const packageManagers = ['yarn', 'npm', 'pnpm', 'bun'];
+  const packageManagers = ['npm', 'yarn', 'pnpm', 'bun'];
   const detectedPM = packageManagers.find(pm => 
     require('fs').existsSync(`${pm}.lock`) || 
     require('fs').existsSync(`package-lock.json`)
@@ -136,7 +136,8 @@ function Invoke-Web3Command {
     
     switch ($Command) {
         "forge" { & forge $Arguments }
-        "yarn" { & yarn $Arguments }
+  "yarn" { & yarn $Arguments }
+  "npm" { & npm $Arguments }
         "npm" { & npm $Arguments }
         "npx" { & npx $Arguments }
         "git" { & git $Arguments }
@@ -153,7 +154,8 @@ web3_command() {
     shift
     case "$cmd" in
         "forge") forge "$@" ;;
-        "yarn") yarn "$@" ;;
+  "yarn") yarn "$@" ;;
+  "npm") npm "$@" ;;
         "npm") npm "$@" ;;
         "npx") npx "$@" ;;
         "git") git "$@" ;;
@@ -245,13 +247,20 @@ setup_web3_env() {
     fi
     
     # Install Node.js dependencies
-    if [ -f "package.json" ]; then
-        if [ -f "yarn.lock" ]; then
-            yarn install
-        else
-            npm install
-        fi
+  if [ -f "package.json" ]; then
+    if [ -f "package-lock.json" ]; then
+      npm ci --prefer-offline --no-audit --progress=false
+    elif [ -f "yarn.lock" ]; then
+      # Yarn detected; prefer npm by default but fall back to yarn if needed
+      if command -v npm > /dev/null 2>&1; then
+        npm install
+      else
+        yarn install
+      fi
+    else
+      npm install
     fi
+  fi
     
     # Setup Git hooks for Web3 development
     if [ -d ".git" ]; then
