@@ -1,0 +1,32 @@
+{
+  "name": "smart-contracts",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Smart contracts for Web3 DApp",
+  "scripts": {
+    "build": "forge build",
+    "test": "forge test",
+    "test:verbose": "forge test -vvv",
+    "test:gas": "forge test --gas-report",
+    "test:coverage": "forge coverage",
+    "deploy": "forge script",
+    "deploy:local": "forge script script/Counter.s.sol --rpc-url http://localhost:8545 --broadcast",
+    "deploy:testnet": "forge script script/Counter.s.sol --rpc-url $TESTNET_RPC_URL --private-key $PRIVATE_KEY --broadcast --verify",
+    "deploy:mainnet": "forge script script/Counter.s.sol --rpc-url $MAINNET_RPC_URL --private-key $PRIVATE_KEY --broadcast --verify",
+    "verify": "forge verify-contract",
+    "anvil": "anvil",
+    "anvil:fork": "anvil --fork-url $MAINNET_RPC_URL",
+    "clean": "forge clean",
+    "size": "forge build --sizes",
+    "trace": "forge test --debug",
+    "snapshot": "forge snapshot",
+    "format": "forge fmt",
+    "format:check": "forge fmt --check"
+  },
+  "devDependencies": {
+    "forge-std": "^1.7.2"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
