@@ -8,6 +8,22 @@ const nextConfig: NextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
   },
+  webpack: (config, { isServer }) => {
+    // 解決 Web3 相關模組解析警告
+    config.resolve.fallback = {
+      ...config.resolve.fallback,
+      '@react-native-async-storage/async-storage': false,
+      'pino-pretty': false,
+    };
+    
+    // 忽略這些模組的警告
+    config.ignoreWarnings = [
+      /Module not found: Can't resolve '@react-native-async-storage\/async-storage'/,
+      /Module not found: Can't resolve 'pino-pretty'/,
+    ];
+    
+    return config;
+  },
   images: {
     remotePatterns: [
       {
