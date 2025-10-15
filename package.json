@@ -1,4 +1,48 @@
 {
+  "name": "web3-dapp-monorepo",
+  "version": "1.0.0",
   "private": true,
-  "workspaces": ["frontend", "contracts"]
+  "description": "Web3 DApp with Next.js frontend and Foundry smart contracts",
+  "workspaces": [
+    "frontend",
+    "contracts"
+  ],
+  "scripts": {
+    "dev": "yarn workspace frontend dev",
+    "build": "yarn workspace frontend build",
+    "start": "yarn workspace frontend start",
+    "lint": "yarn workspace frontend lint",
+    "typecheck": "yarn workspace frontend typecheck",
+    "genkit:dev": "yarn workspace frontend genkit:dev",
+    "genkit:watch": "yarn workspace frontend genkit:watch",
+    "forge:build": "yarn workspace contracts forge build",
+    "forge:test": "yarn workspace contracts forge test",
+    "forge:deploy": "yarn workspace contracts forge script",
+    "forge:verify": "yarn workspace contracts forge verify-contract",
+    "forge:coverage": "yarn workspace contracts forge coverage",
+    "forge:gas-report": "yarn workspace contracts forge test --gas-report",
+    "anvil": "yarn workspace contracts anvil",
+    "install:all": "yarn install",
+    "clean": "yarn workspace frontend clean && yarn workspace contracts clean",
+    "clean:all": "rm -rf node_modules frontend/node_modules contracts/node_modules frontend/.next contracts/out contracts/cache",
+    "test": "yarn workspace frontend test && yarn workspace contracts test",
+    "test:frontend": "yarn workspace frontend test",
+    "test:contracts": "yarn workspace contracts test",
+    "build:all": "yarn forge:build && yarn build",
+    "deploy:local": "yarn anvil & yarn forge:deploy",
+    "deploy:testnet": "yarn forge:deploy --rpc-url $TESTNET_RPC_URL --private-key $PRIVATE_KEY",
+    "deploy:mainnet": "yarn forge:deploy --rpc-url $MAINNET_RPC_URL --private-key $PRIVATE_KEY",
+    "verify:contracts": "yarn forge:verify",
+    "gas-report": "yarn forge:gas-report",
+    "coverage": "yarn forge:coverage"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "cross-env": "^7.0.3"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "yarn": ">=1.22.0"
+  },
+  "packageManager": "yarn@1.22.19"
 }
