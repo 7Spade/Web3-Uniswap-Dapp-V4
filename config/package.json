@@ -12,7 +12,6 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@web3-dapp/shared": "workspace:*",
     "dotenv": "^16.5.0"
   },
   "devDependencies": {

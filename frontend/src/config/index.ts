@@ -1,5 +1,30 @@
-import { NETWORKS, DEFAULT_NETWORK } from '@web3-dapp/shared'
-import { env } from '@web3-dapp/config'
+// 暫時使用本地配置，避免工作區依賴問題
+// import { NETWORKS, DEFAULT_NETWORK } from '@web3-dapp/shared'
+// import { env } from '@web3-dapp/config'
+
+// 本地網絡配置
+const NETWORKS = {
+  ethereum: {
+    id: 1,
+    name: 'Ethereum',
+    rpcUrl: 'https://mainnet.infura.io/v3/your-key',
+    blockExplorer: 'https://etherscan.io'
+  },
+  polygon: {
+    id: 137,
+    name: 'Polygon',
+    rpcUrl: 'https://polygon-rpc.com',
+    blockExplorer: 'https://polygonscan.com'
+  }
+}
+
+const DEFAULT_NETWORK = 'ethereum'
+
+// 環境配置
+const env = {
+  NEXT_PUBLIC_CHAIN_ID: process.env.NEXT_PUBLIC_CHAIN_ID || '1',
+  NEXT_PUBLIC_WALLET_CONNECT_PROJECT_ID: process.env.NEXT_PUBLIC_WALLET_CONNECT_PROJECT_ID || ''
+}
 
 // 應用配置
 export const appConfig = {
