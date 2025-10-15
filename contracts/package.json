@@ -23,9 +23,7 @@
     "format": "forge fmt",
     "format:check": "forge fmt --check"
   },
-  "devDependencies": {
-    "forge-std": "^1.7.2"
-  },
+  "devDependencies": {},
   "engines": {
     "node": ">=18.0.0"
   }

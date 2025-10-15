@@ -10,11 +10,11 @@
     "config"
   ],
   "scripts": {
-    "dev": "yarn workspace frontend dev",
-    "build": "yarn workspace shared build && yarn workspace config build && yarn workspace frontend build",
-    "start": "yarn workspace frontend start",
-    "lint": "yarn workspace frontend lint",
-    "typecheck": "yarn workspace frontend typecheck",
+    "dev": "yarn workspace nextn dev",
+    "build": "yarn workspace @web3-dapp/shared build && yarn workspace @web3-dapp/config build && yarn workspace nextn build",
+    "start": "yarn workspace nextn start",
+    "lint": "yarn workspace nextn lint",
+    "typecheck": "yarn workspace nextn typecheck",
     "genkit:dev": "yarn workspace frontend genkit:dev",
     "genkit:watch": "yarn workspace frontend genkit:watch",
     "forge:build": "yarn workspace contracts forge build",
