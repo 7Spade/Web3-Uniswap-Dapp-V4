@@ -5,8 +5,8 @@ import { Button } from "../ui/button";
 import { Input } from "../ui/input";
 import { Label } from "../ui/label";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../ui/card";
-import { useSignMessage } from "../../../frontend/src/hooks/useSignMessage";
-import { useToast } from "../../../frontend/src/hooks/use-toast";
+import { useSignMessage } from "../../hooks/useSignMessage";
+import { useToast } from "../../hooks/use-toast";
 
 interface SignMessageProps {
   className?: string;

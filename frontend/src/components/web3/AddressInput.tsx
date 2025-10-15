@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { Input } from "../ui/input";
 import { Label } from "../ui/label";
-import { useAddressInput } from "../../../frontend/src/hooks/useWeb3";
+import { useAddressInput } from "../../hooks/useWeb3";
 
 interface AddressInputProps {
   value: string;

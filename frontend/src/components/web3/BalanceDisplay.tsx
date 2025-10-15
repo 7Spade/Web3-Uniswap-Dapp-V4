@@ -1,7 +1,7 @@
 "use client";
 
 import { useAccount, useBalance } from "wagmi";
-import { formatBalance } from "../../../frontend/src/lib/web3-utils";
+import { formatBalance } from "../../lib/web3-utils";
 
 interface BalanceDisplayProps {
   className?: string;
