@@ -5,11 +5,13 @@
   "description": "Web3 DApp with Next.js frontend and Foundry smart contracts",
   "workspaces": [
     "frontend",
-    "contracts"
+    "contracts",
+    "shared",
+    "config"
   ],
   "scripts": {
     "dev": "yarn workspace frontend dev",
-    "build": "yarn workspace frontend build",
+    "build": "yarn workspace shared build && yarn workspace config build && yarn workspace frontend build",
     "start": "yarn workspace frontend start",
     "lint": "yarn workspace frontend lint",
     "typecheck": "yarn workspace frontend typecheck",
@@ -28,7 +30,7 @@
     "test": "yarn workspace frontend test && yarn workspace contracts test",
     "test:frontend": "yarn workspace frontend test",
     "test:contracts": "yarn workspace contracts test",
-    "build:all": "yarn forge:build && yarn build",
+    "build:all": "yarn workspace shared build && yarn workspace config build && yarn forge:build && yarn build",
     "deploy:local": "yarn anvil & yarn forge:deploy",
     "deploy:testnet": "yarn forge:deploy --rpc-url $TESTNET_RPC_URL --private-key $PRIVATE_KEY",
     "deploy:mainnet": "yarn forge:deploy --rpc-url $MAINNET_RPC_URL --private-key $PRIVATE_KEY",

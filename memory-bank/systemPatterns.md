@@ -4,13 +4,17 @@
 - **單體倉庫**: Yarn Workspaces 管理多包專案
 - **前端架構**: Next.js 15 + React 18 + TypeScript
 - **智能合約**: Foundry + Solidity
+- **共享代碼**: 獨立的 shared 和 config 包
 - **包管理**: Yarn 1.22.19
+- **CI/CD**: GitHub Actions 自動化流程
 
 ## 工作區配置模式
 - **根目錄控制**: 統一的 package.json 腳本管理
 - **工作區腳本**: 使用 `yarn workspace` 執行子包命令
 - **並行執行**: concurrently 同時運行多個服務
 - **環境隔離**: 獨立的 .env 配置
+- **共享依賴**: shared 和 config 包提供通用功能
+- **類型安全**: 統一的 TypeScript 類型定義
 
 ## 命令組織模式
 - **統一入口**: 根目錄 package.json 提供所有命令

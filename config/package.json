@@ -1,0 +1,25 @@
+{
+  "name": "@web3-dapp/config",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Configuration management for Web3 DApp",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "clean": "rm -rf dist",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@web3-dapp/shared": "workspace:*",
+    "dotenv": "^16.5.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "typescript": "^5"
+  },
+  "files": [
+    "dist"
+  ]
+}
