@@ -1,13 +1,20 @@
-import { type FC, useState, useEffect, useCallback } from "react";
+"use client";
 
-import { Button, HStack, NumberInput, VStack } from "@chakra-ui/react";
+import { useState, useEffect, useCallback } from "react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { AddressInput } from "./AddressInput";
+import { useToast } from "@/hooks/use-toast";
 import { isAddress, parseEther } from "viem";
 import { useSendTransaction, useWaitForTransactionReceipt } from "wagmi";
 
-import { AddressInput } from "@/components";
-import { useNotify } from "@/hooks";
+interface TransferNativeProps {
+  className?: string;
+}
 
-const TransferNative: FC = () => {
+export function TransferNative({ className }: TransferNativeProps) {
   const {
     data,
     error,
@@ -19,7 +26,7 @@ const TransferNative: FC = () => {
   const { data: receipt, isLoading } = useWaitForTransactionReceipt({
     hash: data,
   });
-  const { notifyError, notifySuccess } = useNotify();
+  const { toast } = useToast();
   const [amount, setAmount] = useState<string>("0");
   const [receiver, setReceiver] = useState<string>("");
   const [hasShownError, setHasShownError] = useState<boolean>(false);
@@ -37,21 +44,26 @@ const TransferNative: FC = () => {
     if (resetTransaction) resetTransaction();
   }, [resetData, resetTransaction]);
 
-  const handleAmountChange = (value: { value: string }): void => {
-    setAmount(value.value);
+  const handleAmountChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setAmount(e.target.value);
     setHasShownError(false);
     setHasShownSuccess(false);
   };
 
   const handleTransfer = () => {
     if (receiver.length === 0 || !isAddress(receiver)) {
-      return notifyError({ title: "Error:", message: "The receiver address is not set!" });
+      return toast({
+        title: "Error",
+        description: "The receiver address is not set!",
+        variant: "destructive",
+      });
     }
 
     if (parseFloat(amount) <= 0) {
-      return notifyError({
-        title: "Error:",
-        message: "The amount to send must be greater than 0.",
+      return toast({
+        title: "Error",
+        description: "The amount to send must be greater than 0.",
+        variant: "destructive",
       });
     }
 
@@ -62,9 +74,9 @@ const TransferNative: FC = () => {
   useEffect(() => {
     if (receipt && !hasShownSuccess) {
       try {
-        notifySuccess({
+        toast({
           title: "Transfer successfully sent!",
-          message: `Hash: ${receipt.transactionHash || "Unknown"}`,
+          description: `Hash: ${receipt.transactionHash || "Unknown"}`,
         });
         setHasShownSuccess(true);
         setAmount("0");
@@ -83,9 +95,10 @@ const TransferNative: FC = () => {
       // Ensure we have a string message
       const errorMessage = typeof error.message === "string" ? error.message : "Transaction failed";
 
-      notifyError({
-        title: "An error occurred:",
-        message: errorMessage,
+      toast({
+        title: "An error occurred",
+        description: errorMessage,
+        variant: "destructive",
       });
       setHasShownError(true);
 
@@ -98,69 +111,55 @@ const TransferNative: FC = () => {
     receipt,
     isError,
     error,
-    notifyError,
-    notifySuccess,
+    toast,
     hasShownError,
     hasShownSuccess,
     resetTransaction,
   ]);
 
   return (
-    <VStack w={"45%"} minWidth={"270px"} gap={2}>
-      <AddressInput
-        receiver={receiver}
-        setReceiver={(value) => {
-          setReceiver(value);
-          setHasShownError(false);
-          setHasShownSuccess(false);
-
-          // Clear any previous transaction data
-          if (resetTransaction) resetTransaction();
-        }}
-      />
-
-      <HStack w={"100%"}>
-        <NumberInput.Root
-          value={amount}
-          onValueChange={(value) => {
-            handleAmountChange(value);
+    <Card className={className}>
+      <CardHeader>
+        <CardTitle>Transfer Native Token</CardTitle>
+        <CardDescription>
+          Send native tokens (ETH) to another address
+        </CardDescription>
+      </CardHeader>
+      <CardContent className="space-y-4">
+        <AddressInput
+          value={receiver}
+          onChange={(value) => {
+            setReceiver(value);
+            setHasShownError(false);
+            setHasShownSuccess(false);
 
             // Clear any previous transaction data
             if (resetTransaction) resetTransaction();
           }}
-          step={0.00000001}
-          min={0}
-          formatOptions={{ minimumFractionDigits: 0, maximumFractionDigits: 8 }}
-          className="custom-input"
-          flex={1}
-          overflow="hidden"
-        >
-          <NumberInput.Input
-            css={{
-              border: "none",
-              paddingLeft: "16px",
-              paddingRight: "16px",
-            }}
+        />
+
+        <div className="space-y-2">
+          <Label htmlFor="amount">Amount (ETH)</Label>
+          <Input
+            id="amount"
+            type="number"
+            value={amount}
+            onChange={handleAmountChange}
+            placeholder="0.0"
+            step="0.00000001"
+            min="0"
+            className="custom-input"
           />
-          <NumberInput.Control>
-            <NumberInput.IncrementTrigger />
-            <NumberInput.DecrementTrigger />
-          </NumberInput.Control>
-        </NumberInput.Root>
+        </div>
 
         <Button
-          variant="ghost"
           onClick={handleTransfer}
-          loading={isLoading || isPending}
-          className="custom-button"
-          h="40px"
-          minW="100px"
+          disabled={isLoading || isPending || !receiver || parseFloat(amount) <= 0}
+          className="w-full"
         >
-          Transfer
+          {isLoading || isPending ? "Processing..." : "Transfer"}
         </Button>
-      </HStack>
-    </VStack>
+      </CardContent>
+    </Card>
   );
-};
-
-export default TransferNative;
+}
