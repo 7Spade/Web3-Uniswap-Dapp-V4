@@ -82,6 +82,8 @@
 - ✅ AI 功能已整合
 - ✅ Web3 功能已整合
 - ✅ VAN 系統已初始化
+- ✅ Web3-Uniswap-Dapp-V4-kk 價值搾取完成
+- ✅ Memory Bank 與專案同步完成
 
 ## Web3 功能特色
 - 🔗 多錢包連接支援 (MetaMask, Rainbow, WalletConnect 等)
@@ -90,6 +92,10 @@
 - 🔗 ENS 名稱解析
 - 📱 響應式設計
 - 🎨 現代化 UI 組件
+- ✍️ 訊息簽名功能
+- 💸 原生代幣轉帳功能
+- 📊 區塊號顯示
+- 🔍 地址輸入驗證 (支援 ENS)
 
 ## 下一步
 - 開發更多 Web3 功能
