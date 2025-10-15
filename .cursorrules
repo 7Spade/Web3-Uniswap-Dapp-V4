@@ -1,12 +1,16 @@
 # Cursor Rules Configuration
-# 整合隔離規則系統和 MCP 服務器自動檢測
+# 整合隔離規則系統和 MCP 服務器自動檢測 - Web3 優化版
 
-## 核心隔離規則系統
-# 載入隔離規則系統的核心組件
+## Web3 優化核心規則系統
+# 載入 Web3 優化的隔離規則系統核心組件
+.cursor\rules\isolation_rules\web3-main-optimized.mdc
 .cursor\rules\isolation_rules\main-optimized.mdc
 .cursor\rules\isolation_rules\main.mdc
 
-## 核心規則模組
+## Web3 優化核心規則模組
+.cursor\rules\isolation_rules\Core\web3-platform-awareness.mdc
+.cursor\rules\isolation_rules\Core\web3-complexity-decision-tree.mdc
+.cursor\rules\isolation_rules\Core\web3-mcp-integration.mdc
 .cursor\rules\isolation_rules\Core\command-execution.mdc
 .cursor\rules\isolation_rules\Core\complexity-decision-tree.mdc
 .cursor\rules\isolation_rules\Core\creative-phase-enforcement.mdc
@@ -45,7 +49,8 @@
 .cursor\rules\isolation_rules\Phases\CreativePhase\creative-phase-architecture.mdc
 .cursor\rules\isolation_rules\Phases\CreativePhase\optimized-creative-template.mdc
 
-## 視覺化模式映射
+## Web3 優化視覺化模式映射
+.cursor\rules\isolation_rules\visual-maps\web3-mode-map.mdc
 .cursor\rules\isolation_rules\visual-maps\van-mode-map.mdc
 .cursor\rules\isolation_rules\visual-maps\archive-mode-map.mdc
 .cursor\rules\isolation_rules\visual-maps\creative-mode-map.mdc
@@ -114,10 +119,14 @@
 ### Codacy 服務器
 - 命令: npx -y @codacy/codacy-mcp@latest
 
-## 開發環境配置
-- 作業系統: Windows 11
+## Web3 開發環境配置
+- 作業系統: Linux (Ubuntu)
 - 包管理器: yarn
 - 語言: 繁體中文
+- 區塊鏈工具: Foundry, Hardhat, Truffle
+- Web3 庫: ethers, wagmi, viem, web3
+- 前端框架: Next.js, React
+- 安全級別: 高 (Web3 安全優先)
 
 ## 規則載入順序
 1. 核心隔離規則系統
@@ -128,12 +137,14 @@
 6. 代碼品質規則
 7. MCP 服務器配置
 
-## 自動化功能
-- 根據任務複雜度自動選擇適當的規則層級
-- 自動檢測平台環境並載入相應規則
-- 自動啟用相關的 MCP 服務器
-- 自動批准常用操作以提升效率
-- 自動進行文件驗證和環境檢查
+## Web3 自動化功能
+- 根據 Web3 任務複雜度自動選擇適當的規則層級
+- 自動檢測區塊鏈開發工具和 Web3 庫
+- 自動配置 MCP 服務器以支援 Web3 開發
+- 自動啟用安全優先和氣體優化模式
+- 自動進行 Web3 文件驗證和環境檢查
+- 自動切換 MCP 服務基於 Web3 開發上下文
+- 自動應用安全檢查和氣體優化建議
 
 ## 注意事項
 - 所有規則文件路徑相對於工作區根目錄

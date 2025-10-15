@@ -17,6 +17,15 @@
         "list_allowed_directories",
         "get_file_info",
         "search_files"
+      ],
+      "web3-optimized": true,
+      "web3-paths": [
+        "contracts/",
+        "src/",
+        "test/",
+        "scripts/",
+        "frontend/src/",
+        "shared/"
       ]
     },
     "playwright": {
@@ -31,7 +40,9 @@
         "take_screenshot",
         "snapshot",
         "wait_for"
-      ]
+      ],
+      "web3-optimized": true,
+      "web3-testing": true
     },
     "context7": {
       "command": "npx",
@@ -46,6 +57,16 @@
       "autoApprove": [
         "resolve-library-id",
         "get-library-docs"
+      ],
+      "web3-optimized": true,
+      "web3-libraries": [
+        "ethers",
+        "wagmi",
+        "viem",
+        "web3",
+        "@openzeppelin/contracts",
+        "hardhat",
+        "foundry"
       ]
     },
     "fetch": {
@@ -58,6 +79,13 @@
       "autoApprove": [
         "fetch_url",
         "fetch_content"
+      ],
+      "web3-optimized": true,
+      "web3-endpoints": [
+        "https://api.etherscan.io/",
+        "https://api.polygonscan.com/",
+        "https://api.basescan.org/",
+        "https://api.arbiscan.io/"
       ]
     },
     "sequential-thinking": {
@@ -72,6 +100,13 @@
       "disabled": false,
       "autoApprove": [
         "sequentialthinking"
+      ],
+      "web3-optimized": true,
+      "web3-use-cases": [
+        "smart-contract-analysis",
+        "gas-optimization",
+        "security-review",
+        "architecture-design"
       ]
     },
     "everything": {
@@ -92,7 +127,9 @@
         "getResourceReference",
         "startElicitation",
         "structuredContent"
-      ]
+      ],
+      "web3-optimized": true,
+      "web3-testing": true
     },
     "angular-cli": {
       "command": "npx",

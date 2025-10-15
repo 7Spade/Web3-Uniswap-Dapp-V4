@@ -1,0 +1,279 @@
+---
+description: Web3-optimized platform detection and command adaptation
+globs: web3-platform-awareness.mdc
+alwaysApply: false
+---
+
+# WEB3 PLATFORM AWARENESS SYSTEM
+
+> **TL;DR:** Web3-optimized platform detection that automatically configures blockchain development tools, MCP services, and development environments for optimal Web3 development workflow.
+
+## 🔍 WEB3 PLATFORM DETECTION PROCESS
+
+```mermaid
+graph TD
+    Start["Start Web3 Platform<br>Detection"] --> DetectOS["Detect OS<br>Environment"]
+    DetectOS --> Windows["Windows<br>Detection"]
+    DetectOS --> Mac["macOS<br>Detection"]
+    DetectOS --> Linux["Linux<br>Detection"]
+    
+    Windows & Mac & Linux --> Web3Tools["Detect Web3<br>Development Tools"]
+    Web3Tools --> NodeCheck["Node.js &<br>Package Manager"]
+    Web3Tools --> BlockchainTools["Blockchain<br>Development Tools"]
+    Web3Tools --> Web3Libs["Web3 Libraries<br>& Frameworks"]
+    
+    NodeCheck --> MCPSetup["Configure MCP<br>Services"]
+    BlockchainTools --> MCPSetup
+    Web3Libs --> MCPSetup
+    
+    MCPSetup --> PathCheck["Path Separator<br>Detection"]
+    PathCheck --> CmdAdapt["Command<br>Adaptation"]
+    CmdAdapt --> ShellCheck["Shell Type<br>Detection"]
+    ShellCheck --> Web3Complete["Web3 Platform<br>Detection Complete"]
+```
+
+## 🌐 WEB3 DEVELOPMENT TOOL DETECTION
+
+### Node.js Ecosystem Detection
+```javascript
+// Auto-detect package manager and Node.js version
+function detectNodeEcosystem() {
+  const packageManagers = ['yarn', 'npm', 'pnpm', 'bun'];
+  const detectedPM = packageManagers.find(pm => 
+    require('fs').existsSync(`${pm}.lock`) || 
+    require('fs').existsSync(`package-lock.json`)
+  );
+  
+  return {
+    packageManager: detectedPM || 'npm',
+    nodeVersion: process.version,
+    hasWorkspaces: require('fs').existsSync('package.json') && 
+      JSON.parse(require('fs').readFileSync('package.json')).workspaces
+  };
+}
+```
+
+### Blockchain Development Tools Detection
+```javascript
+// Detect blockchain development tools
+function detectBlockchainTools() {
+  const tools = {
+    foundry: require('fs').existsSync('foundry.toml'),
+    hardhat: require('fs').existsSync('hardhat.config.js') || 
+             require('fs').existsSync('hardhat.config.ts'),
+    truffle: require('fs').existsSync('truffle-config.js'),
+    ethers: require('fs').existsSync('node_modules/ethers'),
+    wagmi: require('fs').existsSync('node_modules/wagmi'),
+    viem: require('fs').existsSync('node_modules/viem'),
+    web3js: require('fs').existsSync('node_modules/web3'),
+    nextjs: require('fs').existsSync('next.config.js') || 
+            require('fs').existsSync('next.config.ts'),
+    react: require('fs').existsSync('node_modules/react'),
+    typescript: require('fs').existsSync('tsconfig.json')
+  };
+  
+  return tools;
+}
+```
+
+## 🔧 WEB3 MCP SERVICE CONFIGURATION
+
+### Automatic MCP Service Detection and Configuration
+```json
+{
+  "web3-mcp-services": {
+    "filesystem": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-filesystem", "./"],
+      "autoApprove": ["read_text_file", "read_media_file", "list_directory", "search_files"]
+    },
+    "fetch": {
+      "command": "npx",
+      "args": ["-y", "@kazuph/mcp-fetch"],
+      "autoApprove": ["fetch_url", "fetch_content"],
+      "web3-optimized": true
+    },
+    "context7": {
+      "command": "npx",
+      "args": ["-y", "@upstash/context7-mcp@latest"],
+      "autoApprove": ["resolve-library-id", "get-library-docs"],
+      "web3-libraries": ["ethers", "wagmi", "viem", "web3"]
+    },
+    "sequential-thinking": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-sequential-thinking"],
+      "autoApprove": ["sequentialthinking"],
+      "web3-use-cases": ["smart-contract-analysis", "gas-optimization", "security-review"]
+    }
+  }
+}
+```
+
+## 📋 WEB3 PLATFORM VERIFICATION CHECKLIST
+
+```
+✓ WEB3 PLATFORM VERIFICATION
+- Operating system correctly identified? [YES/NO]
+- Node.js ecosystem detected? [YES/NO]
+- Package manager identified? [YES/NO]
+- Blockchain development tools detected? [YES/NO]
+- Web3 libraries identified? [YES/NO]
+- MCP services configured for Web3? [YES/NO]
+- Path separator format detected? [YES/NO]
+- Command set adapted appropriately? [YES/NO]
+
+→ If all YES: Web3 platform adaptation complete
+→ If any NO: Run additional detection steps
+```
+
+## 🚀 WEB3-SPECIFIC COMMAND ADAPTATIONS
+
+### Windows PowerShell Web3 Commands
+```powershell
+# Web3 development commands for Windows
+function Invoke-Web3Command {
+    param($Command, $Arguments)
+    
+    switch ($Command) {
+        "forge" { & forge $Arguments }
+        "yarn" { & yarn $Arguments }
+        "npm" { & npm $Arguments }
+        "npx" { & npx $Arguments }
+        "git" { & git $Arguments }
+        default { & $Command $Arguments }
+    }
+}
+```
+
+### Linux/macOS Bash Web3 Commands
+```bash
+# Web3 development commands for Unix systems
+web3_command() {
+    local cmd="$1"
+    shift
+    case "$cmd" in
+        "forge") forge "$@" ;;
+        "yarn") yarn "$@" ;;
+        "npm") npm "$@" ;;
+        "npx") npx "$@" ;;
+        "git") git "$@" ;;
+        *) "$cmd" "$@" ;;
+    esac
+}
+```
+
+## 🔄 WEB3 MODE TRANSITION TRIGGERS
+
+### Automatic Mode Switching Based on Web3 Context
+```mermaid
+graph TD
+    Web3Task["Web3 Task Detected"] --> AnalyzeType["Analyze Task Type"]
+    
+    AnalyzeType --> SmartContract["Smart Contract<br>Development"]
+    AnalyzeType --> Frontend["Frontend<br>Integration"]
+    AnalyzeType --> Testing["Testing &<br>QA"]
+    AnalyzeType --> Deployment["Deployment &<br>DevOps"]
+    
+    SmartContract --> ForgeMode["FORGE Mode<br>(Foundry Tools)"]
+    Frontend --> NextMode["NEXT Mode<br>(React/Next.js)"]
+    Testing --> QAMode["QA Mode<br>(Testing Suite)"]
+    Deployment --> DeployMode["DEPLOY Mode<br>(Deployment)"]
+    
+    ForgeMode --> MCPTools["Configure MCP<br>for Foundry"]
+    NextMode --> MCPTools
+    QAMode --> MCPTools
+    DeployMode --> MCPTools
+```
+
+## 📊 WEB3 DEVELOPMENT METRICS
+
+### Performance Tracking for Web3 Development
+```javascript
+const web3Metrics = {
+  buildTime: 0,
+  testTime: 0,
+  deployTime: 0,
+  gasOptimization: 0,
+  securityScore: 0,
+  codeCoverage: 0
+};
+
+function trackWeb3Metric(metric, value) {
+  web3Metrics[metric] = value;
+  updateMemoryBank('web3-metrics', web3Metrics);
+}
+```
+
+## 🎯 WEB3-SPECIFIC CHECKPOINTS
+
+### Smart Contract Development Checkpoint
+```
+✓ SMART CONTRACT CHECKPOINT
+- Foundry installed and configured? [YES/NO]
+- Contract source files exist? [YES/NO]
+- Tests written and passing? [YES/NO]
+- Gas optimization reviewed? [YES/NO]
+- Security audit completed? [YES/NO]
+
+→ If all YES: Ready for deployment
+→ If any NO: Complete missing requirements
+```
+
+### Frontend Integration Checkpoint
+```
+✓ FRONTEND INTEGRATION CHECKPOINT
+- Web3 provider configured? [YES/NO]
+- Wallet connection implemented? [YES/NO]
+- Contract ABI integrated? [YES/NO]
+- Error handling implemented? [YES/NO]
+- User experience tested? [YES/NO]
+
+→ If all YES: Ready for production
+→ If any NO: Complete integration steps
+```
+
+## 🔧 WEB3 ENVIRONMENT OPTIMIZATION
+
+### Automatic Environment Setup
+```bash
+# Web3 development environment setup
+setup_web3_env() {
+    # Install Foundry if not present
+    if ! command -v forge &> /dev/null; then
+        curl -L https://foundry.paradigm.xyz | bash
+        foundryup
+    fi
+    
+    # Install Node.js dependencies
+    if [ -f "package.json" ]; then
+        if [ -f "yarn.lock" ]; then
+            yarn install
+        else
+            npm install
+        fi
+    fi
+    
+    # Setup Git hooks for Web3 development
+    if [ -d ".git" ]; then
+        cp .git/hooks/pre-commit.sample .git/hooks/pre-commit
+        chmod +x .git/hooks/pre-commit
+    fi
+}
+```
+
+## 📝 WEB3 PLATFORM STATUS REPORT
+
+```
+╔═════════════════ 🌐 WEB3 PLATFORM STATUS ═════════════════╗
+│                                                           │
+│  🖥️  Operating System: [Detected OS]                      │
+│  📦 Package Manager: [yarn/npm/pnpm]                      │
+│  🔧 Blockchain Tools: [Foundry/Hardhat/Truffle]          │
+│  📚 Web3 Libraries: [ethers/wagmi/viem/web3]             │
+│  🚀 MCP Services: [Configured for Web3]                  │
+│  📁 Path Format: [Platform-appropriate]                  │
+│  ⚡ Commands: [Web3-optimized]                           │
+│                                                           │
+│  ✅ Web3 Development Environment Ready                    │
+╚═══════════════════════════════════════════════════════════╝
+```
