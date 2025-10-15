@@ -92,4 +92,13 @@ export const wagmiConfig = createConfig({
   connectors,
   transports,
   ssr: true,
+  // 添加客戶端配置
+  batch: {
+    multicall: {
+      batchSize: 1024,
+      wait: 16,
+    },
+  },
+  // 避免 SSR 問題
+  storage: typeof window !== 'undefined' ? undefined : undefined,
 });
