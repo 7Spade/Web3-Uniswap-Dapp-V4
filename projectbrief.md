@@ -4,7 +4,7 @@
 **專案名稱**: nextn - Next.js 應用程式  
 **版本**: 0.1.0  
 **開發環境**: Windows 11  
-**包管理器**: yarn  
+**包管理器**: npm (或其他，如 pnpm)  
 
 ## 專案描述
 這是一個基於 Next.js 15.3.3 的現代化 Web 應用程式，整合了多種先進技術和功能模組。
@@ -69,11 +69,11 @@
 - `components.json` - 組件配置
 
 ## 開發腳本
-- `yarn dev` - 開發伺服器 (port 9002)
-- `yarn genkit:dev` - Genkit AI 開發
-- `yarn build` - 生產建置
-- `yarn lint` - 代碼檢查
-- `yarn typecheck` - TypeScript 類型檢查
+- `npm run dev` - 開發伺服器 (port 9002)
+- `npm run genkit:dev` - Genkit AI 開發
+- `npm run build` - 生產建置
+- `npm run lint` - 代碼檢查
+- `npm run typecheck` - TypeScript 類型檢查
 
 ## 當前狀態
 - ✅ 專案已初始化

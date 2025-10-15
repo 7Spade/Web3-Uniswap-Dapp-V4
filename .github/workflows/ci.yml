@@ -18,22 +18,22 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '18'
-          cache: 'yarn'
+          cache: 'npm'
 
       - name: Install dependencies
-        run: yarn install --frozen-lockfile
+        run: npm ci --prefer-offline --no-audit --progress=false
 
       - name: Lint frontend
-        run: yarn workspace frontend lint
+        run: npm run lint -w frontend
 
       - name: Type check frontend
-        run: yarn workspace frontend typecheck
+        run: npm run typecheck -w frontend
 
       - name: Type check shared
-        run: yarn workspace shared typecheck
+        run: npm run typecheck -w shared
 
       - name: Type check config
-        run: yarn workspace config typecheck
+        run: npm run typecheck -w config
 
   # 測試
   test:
@@ -47,22 +47,22 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '18'
-          cache: 'yarn'
+          cache: 'npm'
 
       - name: Install dependencies
-        run: yarn install --frozen-lockfile
+        run: npm ci --prefer-offline --no-audit --progress=false
 
       - name: Build shared package
-        run: yarn workspace shared build
+        run: npm run build -w shared
 
       - name: Build config package
-        run: yarn workspace config build
+        run: npm run build -w config
 
       - name: Test contracts
-        run: yarn workspace contracts test
+        run: npm run test -w contracts
 
       - name: Test frontend
-        run: yarn workspace frontend test
+        run: npm run test -w frontend
 
   # 構建
   build:
@@ -76,13 +76,13 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '18'
-          cache: 'yarn'
+          cache: 'npm'
 
       - name: Install dependencies
-        run: yarn install --frozen-lockfile
+        run: npm ci --prefer-offline --no-audit --progress=false
 
       - name: Build all packages
-        run: yarn build:all
+        run: npm run build:all
 
       - name: Upload build artifacts
         uses: actions/upload-artifact@v4

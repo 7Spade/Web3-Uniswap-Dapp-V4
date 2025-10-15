@@ -23,7 +23,7 @@
 ## 專案狀態
 - **專案類型**: Web3 DApp Monorepo
 - **技術堆疊**: Next.js 15.5.5 + React 18.3.1 + TypeScript
-- **包管理器**: Yarn 1.22.22
+- **包管理器**: npm (或其他，如 pnpm)
 - **工作區**: 4 個 (frontend, contracts, shared, config)
 - **依賴狀態**: ✅ 已安裝
 - **建置狀態**: ✅ 成功

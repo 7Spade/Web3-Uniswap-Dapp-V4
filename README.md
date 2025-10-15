@@ -16,7 +16,7 @@
 
 ### 1. 安裝依賴
 ```bash
-yarn install
+npm install
 # 或使用 Makefile
 make install
 ```
@@ -30,10 +30,10 @@ cp .env.example .env
 ### 3. 開發模式
 ```bash
 # 啟動前端開發服務器
-yarn dev
+npm run dev
 
 # 啟動本地區塊鏈 (Anvil)
-yarn anvil
+npm run anvil
 
 # 同時啟動前端和區塊鏈
 make dev:full
@@ -42,29 +42,29 @@ make dev:full
 ## 可用命令
 
 ### 開發命令
-- `yarn dev` - 啟動前端開發服務器
-- `yarn anvil` - 啟動本地 Anvil 區塊鏈
-- `yarn genkit:dev` - 啟動 Genkit AI 開發服務器
+- `npm run dev` - 啟動前端開發服務器
+- `npm run anvil` - 啟動本地 Anvil 區塊鏈
+- `npm run genkit:dev` - 啟動 Genkit AI 開發服務器
 
 ### 構建命令
-- `yarn build` - 構建前端
-- `yarn forge:build` - 構建智能合約
-- `yarn build:all` - 構建所有組件
+- `npm run build` - 構建前端
+- `npm run forge:build` - 構建智能合約
+- `npm run build:all` - 構建所有組件
 
 ### 測試命令
-- `yarn test` - 運行所有測試
-- `yarn test:frontend` - 運行前端測試
-- `yarn test:contracts` - 運行合約測試
-- `yarn coverage` - 運行合約測試並生成覆蓋率報告
+- `npm run test` - 運行所有測試
+- `npm run test:frontend` - 運行前端測試
+- `npm run test:contracts` - 運行合約測試
+- `npm run coverage` - 運行合約測試並生成覆蓋率報告
 
 ### 部署命令
-- `yarn deploy:local` - 部署到本地 Anvil
-- `yarn deploy:testnet` - 部署到測試網
-- `yarn deploy:mainnet` - 部署到主網
+- `npm run deploy:local` - 部署到本地 Anvil
+- `npm run deploy:testnet` - 部署到測試網
+- `npm run deploy:mainnet` - 部署到主網
 
 ### 驗證命令
-- `yarn verify:contracts` - 驗證已部署的合約
-- `yarn gas-report` - 生成 gas 使用報告
+- `npm run verify:contracts` - 驗證已部署的合約
+- `npm run gas-report` - 生成 gas 使用報告
 
 ## 使用 Makefile
 
@@ -103,8 +103,7 @@ make deploy:local  # 部署到本地
 - Solidity
 - Forge (測試框架)
 
-### 開發工具
-- Yarn Workspaces
+- npm Workspaces (或使用 pnpm)
 - ESLint
 - Prettier
 - Concurrently

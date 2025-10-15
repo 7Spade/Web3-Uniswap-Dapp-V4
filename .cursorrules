@@ -120,13 +120,8 @@
 - 命令: npx -y @codacy/codacy-mcp@latest
 
 ## Web3 開發環境配置
-- 作業系統: Linux (Ubuntu)
-- 包管理器: yarn
-- 語言: 繁體中文
-- 區塊鏈工具: Foundry, Hardhat, Truffle
-- Web3 庫: ethers, wagmi, viem, web3
-- 前端框架: Next.js, React
-- 安全級別: 高 (Web3 安全優先)
+ 作業系統: Linux (Ubuntu)
+ 包管理器: npm
 
 ## 規則載入順序
 1. 核心隔離規則系統

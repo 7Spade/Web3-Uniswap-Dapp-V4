@@ -39,60 +39,60 @@ help:
 
 # Setup commands
 install:
-	yarn install
+	npm install
 
 clean:
-	yarn clean
+	npm run clean
 
 clean:all:
-	yarn clean:all
+	npm run clean:all
 
 # Development commands
 dev:
-	yarn dev
+	npm run dev
 
 anvil:
-	yarn anvil
+	npm run anvil
 
 dev:full:
-	yarn concurrently "yarn anvil" "yarn dev"
+	npm run concurrently --silent -- -c "npm:anvil" "npm:dev"
 
 # Build commands
 build:
-	yarn build
+	npm run build
 
 build:contracts:
-	yarn forge:build
+	npm run forge:build
 
 build:all:
-	yarn build:all
+	npm run build:all
 
 # Test commands
 test:
-	yarn test
+	npm run test
 
 test:frontend:
-	yarn test:frontend
+	npm run test:frontend
 
 test:contracts:
-	yarn test:contracts
+	npm run test:contracts
 
 test:coverage:
-	yarn coverage
+	npm run coverage
 
 # Deployment commands
 deploy:local:
-	yarn deploy:local
+	npm run deploy:local
 
 deploy:testnet:
-	yarn deploy:testnet
+	npm run deploy:testnet
 
 deploy:mainnet:
-	yarn deploy:mainnet
+	npm run deploy:mainnet
 
 # Verification commands
 verify:
-	yarn verify:contracts
+	npm run verify:contracts
 
 gas-report:
-	yarn gas-report
+	npm run gas-report

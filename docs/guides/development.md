@@ -10,7 +10,7 @@ git clone <repository-url>
 cd web3-dapp
 
 # 安裝依賴
-yarn install
+npm install
 
 # 設置環境變數
 cp .env.example .env
@@ -24,21 +24,21 @@ cp .env.example .env
 make dev:full
 
 # 或分別啟動
-yarn anvil      # 本地區塊鏈
-yarn dev        # 前端開發服務器
+npm run anvil      # 本地區塊鏈
+npm run dev        # 前端開發服務器
 ```
 
 ### 3. 構建和測試
 
 ```bash
 # 構建所有包
-yarn build:all
+npm run build:all
 
 # 運行測試
-yarn test
+npm run test
 
 # 類型檢查
-yarn typecheck
+npm run typecheck
 ```
 
 ## 開發工作流
@@ -71,20 +71,20 @@ yarn typecheck
 
 ```bash
 # 啟用詳細日誌
-DEBUG=* yarn dev
+DEBUG=* npm run dev
 
 # 檢查構建輸出
-yarn build && yarn start
+yarn build && npm run start
 ```
 
 ### 合約調試
 
 ```bash
 # 詳細測試輸出
-yarn forge:test -vvv
+npm run forge:test -w contracts -vvv
 
 # 調試特定測試
-yarn forge:test --match-test testFunctionName
+npm run forge:test -w contracts -- --match-test testFunctionName
 ```
 
 ## 常見問題
@@ -93,20 +93,20 @@ yarn forge:test --match-test testFunctionName
 
 ```bash
 # 清理並重新安裝
-yarn clean:all
-yarn install
+npm run clean:all
+npm install
 ```
 
 ### 2. 類型錯誤
 
 ```bash
 # 重新構建共享包
-yarn workspace shared build
+npm run build -w shared
 ```
 
 ### 3. 合約部署失敗
 
 ```bash
 # 檢查網絡連接
-yarn anvil --fork-url $MAINNET_RPC_URL
+npm run anvil -- --fork-url $MAINNET_RPC_URL
 ```
