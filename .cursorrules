@@ -1,0 +1,142 @@
+# Cursor Rules Configuration
+# 整合隔離規則系統和 MCP 服務器自動檢測
+
+## 核心隔離規則系統
+# 載入隔離規則系統的核心組件
+.cursor\rules\isolation_rules\main-optimized.mdc
+.cursor\rules\isolation_rules\main.mdc
+
+## 核心規則模組
+.cursor\rules\isolation_rules\Core\command-execution.mdc
+.cursor\rules\isolation_rules\Core\complexity-decision-tree.mdc
+.cursor\rules\isolation_rules\Core\creative-phase-enforcement.mdc
+.cursor\rules\isolation_rules\Core\creative-phase-metrics.mdc
+.cursor\rules\isolation_rules\Core\file-verification.mdc
+.cursor\rules\isolation_rules\Core\hierarchical-rule-loading.mdc
+.cursor\rules\isolation_rules\Core\mode-transition-optimization.mdc
+.cursor\rules\isolation_rules\Core\optimization-integration.mdc
+.cursor\rules\isolation_rules\Core\platform-awareness.mdc
+
+## 分層工作流程規則
+### Level 1 - 基礎工作流程
+.cursor\rules\isolation_rules\Level1\optimized-workflow-level1.mdc
+.cursor\rules\isolation_rules\Level1\quick-documentation.mdc
+.cursor\rules\isolation_rules\Level1\workflow-level1.mdc
+
+### Level 2 - 中級工作流程
+.cursor\rules\isolation_rules\Level2\archive-basic.mdc
+.cursor\rules\isolation_rules\Level2\reflection-basic.mdc
+.cursor\rules\isolation_rules\Level2\task-tracking-basic.mdc
+.cursor\rules\isolation_rules\Level2\workflow-level2.mdc
+
+### Level 3 - 高級工作流程
+.cursor\rules\isolation_rules\Level3\planning-comprehensive.mdc
+.cursor\rules\isolation_rules\Level3\task-tracking-intermediate.mdc
+
+### Level 4 - 專家級工作流程
+.cursor\rules\isolation_rules\Level4\architectural-planning.mdc
+.cursor\rules\isolation_rules\Level4\archive-comprehensive.mdc
+.cursor\rules\isolation_rules\Level4\phased-implementation.mdc
+.cursor\rules\isolation_rules\Level4\reflection-comprehensive.mdc
+.cursor\rules\isolation_rules\Level4\task-tracking-advanced.mdc
+.cursor\rules\isolation_rules\Level4\workflow-level4.mdc
+
+## 創意階段規則
+.cursor\rules\isolation_rules\Phases\CreativePhase\creative-phase-architecture.mdc
+.cursor\rules\isolation_rules\Phases\CreativePhase\optimized-creative-template.mdc
+
+## 視覺化模式映射
+.cursor\rules\isolation_rules\visual-maps\van-mode-map.mdc
+.cursor\rules\isolation_rules\visual-maps\archive-mode-map.mdc
+.cursor\rules\isolation_rules\visual-maps\creative-mode-map.mdc
+.cursor\rules\isolation_rules\visual-maps\implement-mode-map.mdc
+.cursor\rules\isolation_rules\visual-maps\plan-mode-map.mdc
+.cursor\rules\isolation_rules\visual-maps\qa-mode-map.mdc
+.cursor\rules\isolation_rules\visual-maps\reflect-mode-map.mdc
+
+## VAN 模式分割系統
+.cursor\rules\isolation_rules\visual-maps\van_mode_split\van-mode-map.mdc
+.cursor\rules\isolation_rules\visual-maps\van_mode_split\van-complexity-determination.mdc
+.cursor\rules\isolation_rules\visual-maps\van_mode_split\van-file-verification.mdc
+.cursor\rules\isolation_rules\visual-maps\van_mode_split\van-platform-detection.mdc
+.cursor\rules\isolation_rules\visual-maps\van_mode_split\van-qa-main.mdc
+
+### VAN QA 檢查系統
+.cursor\rules\isolation_rules\visual-maps\van_mode_split\van-qa-checks\build-test.mdc
+.cursor\rules\isolation_rules\visual-maps\van_mode_split\van-qa-checks\config-check.mdc
+.cursor\rules\isolation_rules\visual-maps\van_mode_split\van-qa-checks\dependency-check.mdc
+.cursor\rules\isolation_rules\visual-maps\van_mode_split\van-qa-checks\environment-check.mdc
+.cursor\rules\isolation_rules\visual-maps\van_mode_split\van-qa-checks\file-verification.mdc
+
+### VAN QA 工具
+.cursor\rules\isolation_rules\visual-maps\van_mode_split\van-qa-utils\common-fixes.mdc
+.cursor\rules\isolation_rules\visual-maps\van_mode_split\van-qa-utils\mode-transitions.mdc
+.cursor\rules\isolation_rules\visual-maps\van_mode_split\van-qa-utils\reports.mdc
+.cursor\rules\isolation_rules\visual-maps\van_mode_split\van-qa-utils\rule-calling-guide.mdc
+.cursor\rules\isolation_rules\visual-maps\van_mode_split\van-qa-utils\rule-calling-help.mdc
+
+## 代碼品質規則
+.cursor\rules\codacy.mdc
+
+## MCP 服務器自動檢測配置
+# 自動啟用以下 MCP 服務器並配置自動批准權限
+
+### 文件系統服務器
+- 命令: npx -y @modelcontextprotocol/server-filesystem ./
+- 自動批准操作: read_text_file, read_media_file, list_directory, list_directory_with_sizes, directory_tree, list_allowed_directories, get_file_info, search_files
+
+### Playwright 服務器
+- 命令: npx -y @playwright/mcp
+- 自動批准操作: navigate_to_url, take_screenshot, snapshot, wait_for
+
+### Context7 服務器
+- 命令: npx -y @upstash/context7-mcp@latest
+- 環境變數: NODE_OPTIONS=--max-old-space-size=2048
+- 自動批准操作: resolve-library-id, get-library-docs
+
+### Fetch 服務器
+- 命令: npx -y @kazuph/mcp-fetch
+- 自動批准操作: fetch_url, fetch_content
+
+### 順序思考服務器
+- 命令: npx -y @modelcontextprotocol/server-sequential-thinking
+- 環境變數: NODE_OPTIONS=--max-old-space-size=1024
+- 自動批准操作: sequentialthinking
+
+### Everything 服務器
+- 命令: npx -y @modelcontextprotocol/server-everything
+- 自動批准操作: echo, add, longRunningOperation, printEnv, getTinyImage, annotatedMessage, sampleLLM, getResourceReference, startElicitation, structuredContent
+
+### Angular CLI 服務器
+- 命令: npx -y @angular/cli mcp
+- 自動批准操作: get_best_practices, list_projects, search_documentation
+
+### Codacy 服務器
+- 命令: npx -y @codacy/codacy-mcp@latest
+
+## 開發環境配置
+- 作業系統: Windows 11
+- 包管理器: yarn
+- 語言: 繁體中文
+
+## 規則載入順序
+1. 核心隔離規則系統
+2. 分層工作流程規則（Level 1-4）
+3. 創意階段規則
+4. 視覺化模式映射
+5. VAN 模式分割系統
+6. 代碼品質規則
+7. MCP 服務器配置
+
+## 自動化功能
+- 根據任務複雜度自動選擇適當的規則層級
+- 自動檢測平台環境並載入相應規則
+- 自動啟用相關的 MCP 服務器
+- 自動批准常用操作以提升效率
+- 自動進行文件驗證和環境檢查
+
+## 注意事項
+- 所有規則文件路徑相對於工作區根目錄
+- MCP 服務器配置會自動載入到 Cursor 的 MCP 設定中
+- 規則載入失敗時會自動降級到較低層級的規則
+- 支援動態規則切換和模式轉換
