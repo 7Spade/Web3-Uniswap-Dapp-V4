@@ -1,7 +1,8 @@
 "use client";
 
 import { useState, useMemo, useEffect } from "react";
-import { useFormState, useFormStatus } from "react-dom";
+import { useActionState } from "react";
+import { useFormStatus } from "react-dom";
 import { ArrowDownUp, ChevronDown, Loader2, Zap } from "lucide-react";
 
 import { tokens, type Token } from "@/lib/tokens";
@@ -49,7 +50,7 @@ export default function SwapCard() {
   const [amountOut, setAmountOut] = useState("");
   const [isSelectingFor, setIsSelectingFor] = useState<'in' | 'out' | null>(null);
   
-  const [simulationState, formAction] = useFormState(runSimulation, initialSimulationState);
+  const [simulationState, formAction] = useActionState(runSimulation, initialSimulationState);
   const [isSimulationOpen, setIsSimulationOpen] = useState(false);
   
   const { toast } = useToast();
