@@ -7,7 +7,7 @@ import Image from "next/image";
 
 import { useWindowSize } from "@/hooks/useWindowSize";
 
-import logo from "../../../public/img/logo_transparent.png";
+import logo from "/img/logo_transparent.png";
 import { DarkModeButton } from "../DarkModeButton";
 
 const Header: FC = () => {

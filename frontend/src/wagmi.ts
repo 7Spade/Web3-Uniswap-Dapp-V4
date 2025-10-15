@@ -30,8 +30,8 @@ import {
   bscTestnet,
 } from "wagmi/chains";
 
-import linea_logo from "../public/img/linea_logo.png";
-import lineaTesnet_logo from "../public/img/lineaTesnet_logo.png";
+import linea_logo from "/img/linea_logo.png";
+import lineaTesnet_logo from "/img/lineaTesnet_logo.png";
 
 const walletConnectProjectId = process.env.NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID;
 
