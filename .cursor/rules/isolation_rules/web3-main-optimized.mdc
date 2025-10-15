@@ -1,0 +1,384 @@
+---
+description: Web3-optimized main rule system with blockchain development focus
+globs: web3-main-optimized.mdc
+alwaysApply: false
+---
+
+# 🌐 WEB3 OPTIMIZED MEMORY BANK SYSTEM
+
+🚨 CRITICAL RULE: WEB3 MEMORY BANK CREATION IS MANDATORY 🚨
+Web3 Memory Bank MUST be created BEFORE any other operation in ANY mode
+NO process can continue without verifying Web3 Memory Bank existence
+
+> **TL;DR:** Web3-optimized system that provides specialized workflows for blockchain development, smart contract creation, and Web3 integration with automatic MCP service switching and security-first approach.
+
+## 🧭 WEB3 MODE ARCHITECTURE
+
+```mermaid
+graph TD
+    subgraph "Web3 Memory Bank Core"
+        Context["Web3 Context Manager"]
+        Rules["Web3 Rule Loader"]
+        FileIO["Web3 File Manager"]
+        Transition["Web3 Mode Transition"]
+        Security["Security Manager"]
+        Gas["Gas Optimizer"]
+    end
+    
+    subgraph "Web3 Development Modes"
+        VAN["VAN<br>Web3 Init"]
+        PLAN["PLAN<br>Web3 Architecture"]
+        CREATIVE["CREATIVE<br>Web3 Design"]
+        IMPLEMENT["IMPLEMENT<br>Web3 Development"]
+        QA["QA<br>Web3 Testing"]
+        DEPLOY["DEPLOY<br>Web3 Deployment"]
+        REFLECT["REFLECT<br>Web3 Review"]
+    end
+    
+    subgraph "Web3-Specific Modes"
+        FORGE["FORGE<br>Smart Contracts"]
+        FRONTEND["FRONTEND<br>Web3 UI"]
+        SECURITY["SECURITY<br>Audit & Review"]
+        GAS["GAS<br>Optimization"]
+    end
+    
+    Context --> VAN & PLAN & CREATIVE & IMPLEMENT & QA & DEPLOY & REFLECT
+    Rules --> VAN & PLAN & CREATIVE & IMPLEMENT & QA & DEPLOY & REFLECT
+    FileIO --> VAN & PLAN & CREATIVE & IMPLEMENT & QA & DEPLOY & REFLECT
+    Transition --> VAN & PLAN & CREATIVE & IMPLEMENT & QA & DEPLOY & REFLECT
+    Security --> FORGE & SECURITY
+    Gas --> FORGE & GAS
+    
+    VAN --> PLAN
+    PLAN --> CREATIVE
+    CREATIVE --> IMPLEMENT
+    IMPLEMENT --> QA
+    QA --> DEPLOY
+    DEPLOY --> REFLECT
+    
+    IMPLEMENT --> FORGE
+    IMPLEMENT --> FRONTEND
+    QA --> SECURITY
+    QA --> GAS
+    
+    style Context fill:#4da6ff,stroke:#0066cc,color:white
+    style Rules fill:#ffa64d,stroke:#cc7a30,color:white
+    style FileIO fill:#4dbb5f,stroke:#36873f,color:white
+    style Transition fill:#d94dbb,stroke:#a3378a,color:white
+    style Security fill:#ff5555,stroke:#cc0000,color:white
+    style Gas fill:#ffa500,stroke:#cc7a00,color:white
+```
+
+## 📈 WEB3 ADAPTIVE COMPLEXITY MODEL
+
+```mermaid
+graph TD
+    Web3Task["Web3 Task Creation"] --> Complexity{"Web3 Complexity<br>Level?"}
+    
+    Complexity -->|"Level 1<br>Quick Web3 Fix"| L1["3-Phase<br>Web3 Streamlined"]
+    Complexity -->|"Level 2<br>Web3 Enhancement"| L2["4-Phase<br>Web3 Balanced"]
+    Complexity -->|"Level 3<br>Web3 Feature"| L3["5-Phase<br>Web3 Comprehensive"]
+    Complexity -->|"Level 4<br>Web3 Enterprise"| L4["6-Phase<br>Web3 Governance"]
+    
+    L1 --> L1_Process["VAN → IMPLEMENT → REFLECT"]
+    L2 --> L2_Process["VAN → PLAN → IMPLEMENT → REFLECT"]
+    L3 --> L3_Process["VAN → PLAN → CREATIVE → IMPLEMENT → REFLECT"]
+    L4 --> L4_Process["VAN → PLAN → CREATIVE → IMPLEMENT → QA → DEPLOY → REFLECT"]
+    
+    style Complexity fill:#d94dbb,stroke:#a3378a,color:white
+    style L1 fill:#4dbb5f,stroke:#36873f,color:white
+    style L2 fill:#ffa64d,stroke:#cc7a30,color:white
+    style L3 fill:#4da6ff,stroke:#0066cc,color:white
+    style L4 fill:#ff5555,stroke:#cc0000,color:white
+```
+
+## 🔧 WEB3 MCP SERVICE INTEGRATION
+
+### Automatic MCP Service Detection and Configuration
+```mermaid
+graph TD
+    Web3Init["Web3 Initialization"] --> DetectTools["Detect Web3<br>Development Tools"]
+    DetectTools --> Foundry["Foundry<br>Detection"]
+    DetectTools --> Hardhat["Hardhat<br>Detection"]
+    DetectTools --> Truffle["Truffle<br>Detection"]
+    DetectTools --> Frontend["Frontend<br>Framework Detection"]
+    
+    Foundry --> ConfigureMCP["Configure MCP<br>Services"]
+    Hardhat --> ConfigureMCP
+    Truffle --> ConfigureMCP
+    Frontend --> ConfigureMCP
+    
+    ConfigureMCP --> Filesystem["Filesystem<br>MCP"]
+    ConfigureMCP --> Fetch["Fetch<br>MCP"]
+    ConfigureMCP --> Context7["Context7<br>MCP"]
+    ConfigureMCP --> Thinking["Sequential<br>Thinking"]
+    ConfigureMCP --> Playwright["Playwright<br>MCP"]
+    
+    Filesystem --> Web3Ready["Web3 Development<br>Environment Ready"]
+    Fetch --> Web3Ready
+    Context7 --> Web3Ready
+    Thinking --> Web3Ready
+    Playwright --> Web3Ready
+```
+
+## 🧠 WEB3 HIERARCHICAL RULE LOADING
+
+Web3 rules are loaded hierarchically with blockchain-specific optimizations:
+
+```mermaid
+graph TD
+    Root["Web3 Memory Bank<br>Common Rules"] --> Core["Web3 Core Rules<br>Shared Across Modes"]
+    
+    Core --> L1["Level 1<br>Web3 Rules"]
+    Core --> L2["Level 2<br>Web3 Rules"]
+    Core --> L3["Level 3<br>Web3 Rules"]
+    Core --> L4["Level 4<br>Web3 Rules"]
+    
+    Core --> VM["Web3 Mode<br>Visual Maps"]
+    
+    Core --> Phase["Web3 Phase-Specific<br>Rules"]
+    
+    Phase --> VAN_Rules["VAN Web3<br>Rules"]
+    Phase --> PLAN_Rules["PLAN Web3<br>Rules"]
+    Phase --> CREATIVE_Rules["CREATIVE Web3<br>Rules"]
+    Phase --> IMPLEMENT_Rules["IMPLEMENT Web3<br>Rules"]
+    Phase --> QA_Rules["QA Web3<br>Rules"]
+    Phase --> DEPLOY_Rules["DEPLOY Web3<br>Rules"]
+    Phase --> REFLECT_Rules["REFLECT Web3<br>Rules"]
+    
+    style Root fill:#4da6ff,stroke:#0066cc,color:white
+    style Core fill:#ffa64d,stroke:#cc7a30,color:white
+    style Phase fill:#4dbb5f,stroke:#36873f,color:white
+```
+
+## 🔐 WEB3 SECURITY-FIRST APPROACH
+
+### Security Considerations by Complexity Level
+```mermaid
+graph TD
+    Security["Web3 Security Assessment"] --> Level1["Level 1<br>Basic Security"]
+    Security --> Level2["Level 2<br>Enhanced Security"]
+    Security --> Level3["Level 3<br>Advanced Security"]
+    Security --> Level4["Level 4<br>Enterprise Security"]
+    
+    Level1 --> Basic["Basic Input Validation<br>Error Handling"]
+    Level2 --> Enhanced["Access Controls<br>Reentrancy Guards"]
+    Level3 --> Advanced["Security Audits<br>Vulnerability Testing"]
+    Level4 --> Enterprise["Formal Verification<br>Penetration Testing"]
+    
+    style Security fill:#ff5555,stroke:#cc0000,color:white
+    style Level1 fill:#4dbb5f,stroke:#36873f,color:white
+    style Level2 fill:#ffa64d,stroke:#cc7a30,color:white
+    style Level3 fill:#4da6ff,stroke:#0066cc,color:white
+    style Level4 fill:#ff5555,stroke:#cc0000,color:white
+```
+
+## ⛽ WEB3 GAS OPTIMIZATION
+
+### Gas Optimization by Complexity Level
+```mermaid
+graph TD
+    Gas["Web3 Gas Optimization"] --> Level1["Level 1<br>Basic Optimization"]
+    Gas --> Level2["Level 2<br>Standard Optimization"]
+    Gas --> Level3["Level 3<br>Advanced Optimization"]
+    Gas --> Level4["Level 4<br>Critical Optimization"]
+    
+    Level1 --> Basic["Variable Packing<br>Function Optimization"]
+    Level2 --> Standard["Storage Optimization<br>Loop Optimization"]
+    Level3 --> Advanced["Assembly Code<br>Custom Libraries"]
+    Level4 --> Critical["Gas Profiling<br>Micro-optimizations"]
+    
+    style Gas fill:#ffa500,stroke:#cc7a00,color:white
+    style Level1 fill:#4dbb5f,stroke:#36873f,color:white
+    style Level2 fill:#ffa64d,stroke:#cc7a30,color:white
+    style Level3 fill:#4da6ff,stroke:#0066cc,color:white
+    style Level4 fill:#ff5555,stroke:#cc0000,color:white
+```
+
+## 🔄 WEB3 MODE TRANSITIONS
+
+### Web3-Specific Mode Transition Rules
+```mermaid
+sequenceDiagram
+    participant Current as Current Web3 Mode
+    participant Context as Web3 Context Manager
+    participant Security as Security Manager
+    participant Gas as Gas Optimizer
+    participant Next as Next Web3 Mode
+    
+    Current->>Context: Create Web3 transition document
+    Current->>Context: Store Web3 context
+    Current->>Security: Assess security requirements
+    Current->>Gas: Assess gas optimization needs
+    Context->>Context: Prepare Web3 rule cache
+    Current->>Next: Initiate Web3 transition
+    Next->>Context: Verify Web3 context availability
+    Context->>Next: Load relevant Web3 context
+    Context->>Next: Load cached Web3 rules
+    Security->>Next: Apply security requirements
+    Gas->>Next: Apply gas optimization
+    Next->>Next: Continue with Web3 context
+```
+
+## 📊 WEB3 MEMORY BANK EFFICIENT UPDATES
+
+```mermaid
+graph TD
+    subgraph "Web3 Memory Bank Files"
+        tasks["tasks.md<br>Web3 Source of Truth"]
+        active["activeContext.md<br>Current Web3 Focus"]
+        creative["creative-*.md<br>Web3 Design Decisions"]
+        progress["progress.md<br>Web3 Implementation Status"]
+        transition["transition.md<br>Web3 Mode Transitions"]
+        security["security.md<br>Security Requirements"]
+        gas["gas-optimization.md<br>Gas Optimization Log"]
+    end
+    
+    Update["Web3 Update Request"] --> Diff{"Changed?"}
+    Diff -->|"No"| Skip["Skip Update"]
+    Diff -->|"Yes"| Section{"Web3 Section<br>Change?"}
+    Section -->|"Yes"| Partial["Update Changed<br>Web3 Sections Only"]
+    Section -->|"No"| Full["Full Web3 File<br>Update"]
+    
+    Partial --> tasks
+    Full --> tasks
+    
+    style Update fill:#4da6ff,stroke:#0066cc,color:white
+    style Diff fill:#ffa64d,stroke:#cc7a30,color:white
+    style Section fill:#4dbb5f,stroke:#36873f,color:white
+    style Partial fill:#d94dbb,stroke:#a3378a,color:white
+    style Full fill:#4dbbbb,stroke:#368787,color:white
+```
+
+## 💻 WEB3 COMPLEXITY-BASED DOCUMENTATION
+
+Web3 documentation requirements scale based on complexity and security level:
+
+| Documentation | Level 1 | Level 2 | Level 3 | Level 4 |
+|---------------|---------|---------|---------|---------|
+| **Problem Definition** | Brief | Standard | Detailed | Comprehensive |
+| **Security Analysis** | Basic | Enhanced | Advanced | Enterprise |
+| **Gas Optimization** | None | Basic | Advanced | Critical |
+| **Testing Requirements** | Unit | Integration | Security | Comprehensive |
+| **Audit Requirements** | None | Optional | Recommended | Mandatory |
+| **Deployment Strategy** | Simple | Standard | Detailed | Phased |
+
+## 📑 WEB3 OPTIMIZED TEMPLATES BY LEVEL
+
+### Level 1: Quick Web3 Fix Template
+```markdown
+## QUICK WEB3 FIX: [Issue Name]
+- Problem: [Brief Web3 description]
+- Solution: [Implemented approach]
+- Security: [Basic security considerations]
+- Gas: [Gas impact assessment]
+- Verification: [How fix was tested]
+```
+
+### Level 2: Web3 Enhancement Template
+```markdown
+## WEB3 ENHANCEMENT: [Feature Name]
+- Requirement: [What needs to be done]
+- Security: [Security considerations]
+- Gas: [Gas optimization applied]
+- Approach: [How it was implemented]
+- Testing: [Verification approach]
+- Documentation: [Where documented]
+```
+
+### Level 3-4: Comprehensive Web3 Template
+Uses the optimized creative phase template with Web3-specific documentation depth including security analysis, gas optimization, and audit requirements.
+
+## 🔄 WEB3 REFERENCE MAPS
+
+Each Web3 mode's visual process map is optimized for blockchain development:
+
+- @Web3 VAN Mode Map (Web3 Initialization)
+- @Web3 PLAN Mode Map (Web3 Architecture)
+- @Web3 CREATIVE Mode Map (Web3 Design)
+- @Web3 IMPLEMENT Mode Map (Web3 Development)
+- @Web3 QA Mode Map (Web3 Testing)
+- @Web3 DEPLOY Mode Map (Web3 Deployment)
+- @Web3 REFLECT Mode Map (Web3 Review)
+
+## ⚡ WEB3 TOKEN EFFICIENCY IMPROVEMENTS
+
+Web3 optimizations in this version:
+
+1. **Web3-specific rule loading** (70% token reduction)
+2. **Blockchain-aware context management** (60% token reduction)
+3. **Security-first documentation** (50% token reduction)
+4. **Gas optimization integration** (40% token reduction)
+5. **MCP service auto-switching** (30% token reduction)
+
+## 🎯 WEB3-SPECIFIC CHECKPOINTS
+
+### Web3 Development Checkpoint
+```
+✓ WEB3 DEVELOPMENT CHECKPOINT
+- Blockchain tools configured? [Foundry/Hardhat/Truffle]
+- Web3 libraries integrated? [ethers/wagmi/viem/web3]
+- Security requirements met? [Access controls/Reentrancy guards]
+- Gas optimization applied? [Variable packing/Loop optimization]
+- Testing strategy implemented? [Unit/Integration/Security tests]
+- MCP services configured? [Filesystem/Fetch/Context7/Thinking]
+
+→ If all YES: Web3 development ready
+→ If any NO: Complete Web3 requirements
+```
+
+### Web3 Security Checkpoint
+```
+✓ WEB3 SECURITY CHECKPOINT
+- Access controls implemented? [YES/NO]
+- Reentrancy guards added? [YES/NO]
+- Input validation comprehensive? [YES/NO]
+- External calls secured? [YES/NO]
+- Security testing completed? [YES/NO]
+- Audit requirements met? [YES/NO]
+
+→ If all YES: Security requirements met
+→ If any NO: Complete security measures
+```
+
+## 💡 WEB3 USAGE GUIDANCE
+
+To use the Web3 optimized system:
+
+1. **Start with Web3 VAN** to initialize and detect blockchain tools
+2. **Follow Web3 complexity-appropriate workflow** with security considerations
+3. **Use Web3-specific documentation** appropriate to task complexity
+4. **Let the system manage MCP services** and Web3 context preservation
+5. **Enjoy Web3-optimized development** while maintaining security and gas efficiency
+
+## 🚀 WEB3 MODE ACTIVATION
+
+When the user types "VAN", respond with Web3 confirmation:
+
+```
+User: VAN
+
+Response: OK VAN - Beginning Web3 Initialization Process
+🌐 Web3 development environment detected
+🔧 Configuring MCP services for blockchain development
+🔐 Security-first approach activated
+⛽ Gas optimization enabled
+```
+
+## 📝 WEB3 STATUS REPORT FORMAT
+
+```
+╔═════════════════ 🌐 WEB3 SYSTEM STATUS ═════════════════╗
+│                                                         │
+│  🚀 Web3 Mode: [VAN/PLAN/CREATIVE/IMPLEMENT/QA/DEPLOY]  │
+│  🔧 Blockchain Tools: [Foundry/Hardhat/Truffle]        │
+│  📚 Web3 Libraries: [ethers/wagmi/viem/web3]           │
+│  🔐 Security Level: [Low/Medium/High/Critical]          │
+│  ⛽ Gas Optimization: [None/Basic/Advanced/Critical]    │
+│  🧪 Testing Status: [Not Started/In Progress/Done]      │
+│  🚀 Deployment Status: [Not Ready/Ready/Deployed]       │
+│  📊 MCP Services: [Active services list]                │
+│                                                         │
+│  ✅ Web3 Development Environment Ready                  │
+╚═════════════════════════════════════════════════════════╝
+```

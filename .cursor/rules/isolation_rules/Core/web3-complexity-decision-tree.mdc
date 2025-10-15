@@ -1,0 +1,256 @@
+---
+description: Web3-optimized complexity determination with blockchain-specific considerations
+globs: web3-complexity-decision-tree.mdc
+alwaysApply: false
+---
+
+# WEB3 COMPLEXITY DECISION TREE
+
+> **TL;DR:** Web3-optimized complexity determination that considers blockchain-specific factors like smart contract security, gas optimization, and Web3 integration complexity.
+
+## 🔍 WEB3 COMPLEXITY DECISION TREE
+
+```mermaid
+graph TD
+    Start["Web3 Task"] --> Q1{"Smart Contract<br>Related?"}
+    
+    Q1 -->|Yes| Q1a{"Contract<br>Security Impact?"}
+    Q1a -->|High| Q1b{"Financial<br>Implications?"}
+    Q1b -->|Yes| L4["Level 4:<br>Critical Smart Contract"]
+    Q1b -->|No| L3["Level 3:<br>Security-Sensitive Contract"]
+    Q1a -->|Low| Q1c{"Gas Optimization<br>Required?"}
+    Q1c -->|Yes| L2["Level 2:<br>Gas-Optimized Contract"]
+    Q1c -->|No| L1["Level 1:<br>Simple Contract Fix"]
+    
+    Q1 -->|No| Q2{"Frontend<br>Integration?"}
+    Q2 -->|Yes| Q2a{"Wallet<br>Integration?"}
+    Q2a -->|Yes| Q2b{"Multiple<br>Wallets?"}
+    Q2b -->|Yes| L3["Level 3:<br>Multi-Wallet Frontend"]
+    Q2b -->|No| L2["Level 2:<br>Single Wallet Frontend"]
+    Q2a -->|No| L1["Level 1:<br>Basic Frontend Fix"]
+    
+    Q2 -->|No| Q3{"Testing &<br>QA?"}
+    Q3 -->|Yes| Q3a{"Security<br>Testing?"}
+    Q3a -->|Yes| L3["Level 3:<br>Security Testing Suite"]
+    Q3a -->|No| L2["Level 2:<br>Basic Testing"]
+    
+    Q3 -->|No| Q4{"Deployment &<br>DevOps?"}
+    Q4 -->|Yes| Q4a{"Mainnet<br>Deployment?"}
+    Q4a -->|Yes| L4["Level 4:<br>Mainnet Deployment"]
+    Q4a -->|No| L3["Level 3:<br>Testnet Deployment"]
+    
+    Q4 -->|No| L1["Level 1:<br>General Fix"]
+
+    style Start fill:#4da6ff,stroke:#0066cc,color:white
+    style L1 fill:#10b981,stroke:#059669,color:white
+    style L2 fill:#ffa64d,stroke:#cc7a30,color:white
+    style L3 fill:#4da6ff,stroke:#0066cc,color:white
+    style L4 fill:#ff5555,stroke:#cc0000,color:white
+```
+
+## 📋 WEB3 LEVEL INDICATORS
+
+### Level 1: Quick Web3 Fix
+- **Keywords**: fix, bug, error, crash, issue, typo
+- **Scope**: Single component, no security impact
+- **Time**: Minutes to hours
+- **Risk**: Low, isolated
+- **Examples**: 
+  - Button not working in Web3 UI
+  - Styling issue in wallet connection
+  - Simple contract variable fix
+  - Basic frontend error handling
+
+### Level 2: Web3 Enhancement
+- **Keywords**: add, improve, update, enhance, optimize
+- **Scope**: Single component/subsystem with Web3 considerations
+- **Time**: Hours to 1-2 days
+- **Risk**: Moderate, contained
+- **Examples**:
+  - Add new wallet provider
+  - Implement gas estimation
+  - Add transaction status tracking
+  - Optimize contract gas usage
+  - Add basic error handling
+
+### Level 3: Web3 Feature Development
+- **Keywords**: implement, create, develop, integrate
+- **Scope**: Multiple components with security considerations
+- **Time**: Days to 1-2 weeks
+- **Risk**: Significant, requires security review
+- **Examples**:
+  - Multi-wallet integration
+  - Complex smart contract functionality
+  - Security testing suite
+  - Testnet deployment pipeline
+  - Advanced Web3 UI components
+
+### Level 4: Critical Web3 System
+- **Keywords**: system, architecture, redesign, mainnet
+- **Scope**: Multiple subsystems with high security requirements
+- **Time**: Weeks to months
+- **Risk**: High, requires extensive security audit
+- **Examples**:
+  - Mainnet smart contract deployment
+  - DeFi protocol development
+  - Cross-chain integration
+  - Enterprise Web3 solution
+  - Security-critical contract updates
+
+## 🔐 WEB3 SECURITY CONSIDERATIONS
+
+### Security Impact Assessment
+```mermaid
+graph TD
+    Security["Security Assessment"] --> Financial["Financial Impact"]
+    Security --> UserData["User Data Impact"]
+    Security --> System["System Integrity"]
+    
+    Financial --> High["High Risk<br>Level 4"]
+    Financial --> Medium["Medium Risk<br>Level 3"]
+    Financial --> Low["Low Risk<br>Level 2"]
+    
+    UserData --> High
+    UserData --> Medium
+    UserData --> Low
+    
+    System --> High
+    System --> Medium
+    System --> Low
+```
+
+### Gas Optimization Requirements
+```javascript
+// Gas optimization complexity assessment
+function assessGasOptimization(contractChanges) {
+  const gasFactors = {
+    loops: contractChanges.includes('for') || contractChanges.includes('while'),
+    storage: contractChanges.includes('storage'),
+    externalCalls: contractChanges.includes('external'),
+    cryptography: contractChanges.includes('keccak256') || 
+                  contractChanges.includes('ecrecover'),
+    arrays: contractChanges.includes('[]') || contractChanges.includes('Array')
+  };
+  
+  const complexity = Object.values(gasFactors).filter(Boolean).length;
+  
+  if (complexity >= 4) return 'Level 4 - Critical Gas Optimization';
+  if (complexity >= 2) return 'Level 3 - Significant Gas Optimization';
+  if (complexity >= 1) return 'Level 2 - Basic Gas Optimization';
+  return 'Level 1 - No Gas Optimization';
+}
+```
+
+## 🧪 WEB3 TESTING COMPLEXITY
+
+### Testing Requirements by Level
+```mermaid
+graph TD
+    Testing["Web3 Testing"] --> Unit["Unit Tests"]
+    Testing --> Integration["Integration Tests"]
+    Testing --> Security["Security Tests"]
+    Testing --> Gas["Gas Tests"]
+    Testing --> E2E["End-to-End Tests"]
+    
+    Unit --> L1["Level 1: Basic Unit Tests"]
+    Integration --> L2["Level 2: Integration Tests"]
+    Security --> L3["Level 3: Security Tests"]
+    Gas --> L3["Level 3: Gas Optimization Tests"]
+    E2E --> L4["Level 4: Comprehensive Test Suite"]
+```
+
+## 📊 WEB3 COMPLEXITY MATRIX
+
+| Factor | Level 1 | Level 2 | Level 3 | Level 4 |
+|--------|---------|---------|---------|---------|
+| **Security Impact** | None | Low | Medium | High |
+| **Financial Risk** | None | Low | Medium | High |
+| **Gas Optimization** | None | Basic | Advanced | Critical |
+| **Testing Required** | Unit | Integration | Security | Comprehensive |
+| **Audit Required** | No | No | Optional | Mandatory |
+| **Deployment** | Local | Testnet | Testnet+ | Mainnet |
+| **Documentation** | Minimal | Standard | Detailed | Extensive |
+
+## 🔄 WEB3 MODE TRANSITION RULES
+
+### Automatic Mode Selection Based on Web3 Complexity
+```javascript
+function selectWeb3Mode(complexity, taskType) {
+  const modeMap = {
+    'Level 1': {
+      'smart-contract': 'IMPLEMENT',
+      'frontend': 'IMPLEMENT',
+      'testing': 'QA',
+      'deployment': 'IMPLEMENT'
+    },
+    'Level 2': {
+      'smart-contract': 'PLAN → CREATIVE → IMPLEMENT',
+      'frontend': 'PLAN → IMPLEMENT',
+      'testing': 'PLAN → QA',
+      'deployment': 'PLAN → IMPLEMENT'
+    },
+    'Level 3': {
+      'smart-contract': 'PLAN → CREATIVE → QA → IMPLEMENT',
+      'frontend': 'PLAN → CREATIVE → IMPLEMENT',
+      'testing': 'PLAN → CREATIVE → QA',
+      'deployment': 'PLAN → CREATIVE → QA → IMPLEMENT'
+    },
+    'Level 4': {
+      'smart-contract': 'PLAN → CREATIVE → QA → IMPLEMENT → REFLECT',
+      'frontend': 'PLAN → CREATIVE → QA → IMPLEMENT',
+      'testing': 'PLAN → CREATIVE → QA → IMPLEMENT',
+      'deployment': 'PLAN → CREATIVE → QA → IMPLEMENT → REFLECT'
+    }
+  };
+  
+  return modeMap[complexity]?.[taskType] || 'VAN';
+}
+```
+
+## 🎯 WEB3-SPECIFIC CHECKPOINTS
+
+### Smart Contract Development Checkpoint
+```
+✓ SMART CONTRACT CHECKPOINT
+- Security implications assessed? [YES/NO]
+- Gas optimization considered? [YES/NO]
+- Test coverage adequate? [YES/NO]
+- Audit requirements met? [YES/NO]
+- Deployment strategy defined? [YES/NO]
+
+→ If all YES: Ready for implementation
+→ If any NO: Complete requirements first
+```
+
+### Frontend Integration Checkpoint
+```
+✓ FRONTEND INTEGRATION CHECKPOINT
+- Wallet compatibility verified? [YES/NO]
+- Error handling comprehensive? [YES/NO]
+- User experience tested? [YES/NO]
+- Network switching supported? [YES/NO]
+- Transaction feedback implemented? [YES/NO]
+
+→ If all YES: Ready for production
+→ If any NO: Complete integration steps
+```
+
+## 📝 WEB3 COMPLEXITY REPORT FORMAT
+
+```
+╔═════════════════ 🔍 WEB3 COMPLEXITY ASSESSMENT ═════════════════╗
+│                                                                 │
+│  📋 Task Type: [Smart Contract/Frontend/Testing/Deployment]     │
+│  🎯 Complexity Level: [1-4]                                     │
+│  🔐 Security Impact: [None/Low/Medium/High]                     │
+│  💰 Financial Risk: [None/Low/Medium/High]                      │
+│  ⛽ Gas Optimization: [None/Basic/Advanced/Critical]            │
+│  🧪 Testing Required: [Unit/Integration/Security/Comprehensive] │
+│  🔍 Audit Required: [No/Optional/Mandatory]                     │
+│  🚀 Deployment Target: [Local/Testnet/Mainnet]                  │
+│                                                                 │
+│  📋 Recommended Workflow: [Mode Sequence]                       │
+│  ⚠️  Risk Factors: [List of identified risks]                   │
+│  💡 Optimization Opportunities: [List of optimizations]        │
+╚═════════════════════════════════════════════════════════════════╝
+```

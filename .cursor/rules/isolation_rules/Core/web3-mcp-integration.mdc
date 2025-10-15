@@ -1,0 +1,432 @@
+---
+description: Web3-optimized MCP service integration with automatic service switching
+globs: web3-mcp-integration.mdc
+alwaysApply: false
+---
+
+# WEB3 MCP INTEGRATION SYSTEM
+
+> **TL;DR:** Web3-optimized MCP service integration that automatically configures and switches between services based on Web3 development context and task requirements.
+
+## 🔧 WEB3 MCP SERVICE ARCHITECTURE
+
+```mermaid
+graph TD
+    subgraph "Web3 MCP Core"
+        Detector["Service Detector"]
+        Router["Service Router"]
+        Config["Auto Config"]
+        Monitor["Service Monitor"]
+    end
+    
+    subgraph "Web3 Services"
+        Filesystem["Filesystem<br>MCP"]
+        Fetch["Fetch<br>MCP"]
+        Context7["Context7<br>MCP"]
+        Thinking["Sequential<br>Thinking"]
+        Everything["Everything<br>MCP"]
+    end
+    
+    subgraph "Web3-Specific Services"
+        Blockchain["Blockchain<br>Explorer"]
+        GasTracker["Gas<br>Tracker"]
+        Security["Security<br>Scanner"]
+        Deploy["Deployment<br>Manager"]
+    end
+    
+    Detector --> Router
+    Router --> Config
+    Config --> Filesystem
+    Config --> Fetch
+    Config --> Context7
+    Config --> Thinking
+    Config --> Everything
+    Config --> Blockchain
+    Config --> GasTracker
+    Config --> Security
+    Config --> Deploy
+    
+    Monitor --> Detector
+```
+
+## 🚀 AUTOMATIC MCP SERVICE DETECTION
+
+### Web3 Context Detection
+```javascript
+// Detect Web3 development context and configure MCP services
+function detectWeb3Context() {
+  const context = {
+    projectType: detectProjectType(),
+    blockchainTools: detectBlockchainTools(),
+    web3Libraries: detectWeb3Libraries(),
+    developmentStage: detectDevelopmentStage(),
+    securityLevel: assessSecurityLevel()
+  };
+  
+  return configureMCPServices(context);
+}
+
+function detectProjectType() {
+  if (require('fs').existsSync('foundry.toml')) return 'foundry';
+  if (require('fs').existsSync('hardhat.config.js')) return 'hardhat';
+  if (require('fs').existsSync('truffle-config.js')) return 'truffle';
+  if (require('fs').existsSync('next.config.js')) return 'nextjs';
+  if (require('fs').existsSync('package.json')) {
+    const pkg = JSON.parse(require('fs').readFileSync('package.json'));
+    if (pkg.dependencies?.react) return 'react';
+  }
+  return 'general';
+}
+
+function detectBlockchainTools() {
+  return {
+    foundry: require('fs').existsSync('foundry.toml'),
+    hardhat: require('fs').existsSync('hardhat.config.js'),
+    truffle: require('fs').existsSync('truffle-config.js'),
+    ethers: require('fs').existsSync('node_modules/ethers'),
+    wagmi: require('fs').existsSync('node_modules/wagmi'),
+    viem: require('fs').existsSync('node_modules/viem'),
+    web3: require('fs').existsSync('node_modules/web3')
+  };
+}
+```
+
+## 📋 WEB3 MCP SERVICE CONFIGURATION
+
+### Dynamic MCP Configuration Based on Context
+```json
+{
+  "web3-mcp-config": {
+    "base-services": {
+      "filesystem": {
+        "command": "npx",
+        "args": ["-y", "@modelcontextprotocol/server-filesystem", "./"],
+        "autoApprove": [
+          "read_text_file",
+          "read_media_file", 
+          "list_directory",
+          "list_directory_with_sizes",
+          "directory_tree",
+          "search_files"
+        ],
+        "web3-paths": [
+          "contracts/",
+          "src/",
+          "test/",
+          "scripts/",
+          "frontend/src/",
+          "shared/"
+        ]
+      },
+      "fetch": {
+        "command": "npx",
+        "args": ["-y", "@kazuph/mcp-fetch"],
+        "autoApprove": ["fetch_url", "fetch_content"],
+        "web3-endpoints": [
+          "https://api.etherscan.io/",
+          "https://api.polygonscan.com/",
+          "https://api.basescan.org/",
+          "https://api.arbiscan.io/"
+        ]
+      },
+      "context7": {
+        "command": "npx",
+        "args": ["-y", "@upstash/context7-mcp@latest"],
+        "autoApprove": ["resolve-library-id", "get-library-docs"],
+        "web3-libraries": [
+          "ethers",
+          "wagmi", 
+          "viem",
+          "web3",
+          "@openzeppelin/contracts",
+          "hardhat",
+          "foundry"
+        ]
+      }
+    },
+    "context-specific-services": {
+      "smart-contract-development": {
+        "sequential-thinking": {
+          "command": "npx",
+          "args": ["-y", "@modelcontextprotocol/server-sequential-thinking"],
+          "autoApprove": ["sequentialthinking"],
+          "use-cases": [
+            "contract-security-analysis",
+            "gas-optimization-planning",
+            "architecture-design"
+          ]
+        }
+      },
+      "frontend-development": {
+        "playwright": {
+          "command": "npx",
+          "args": ["-y", "@playwright/mcp"],
+          "autoApprove": ["navigate_to_url", "take_screenshot", "snapshot"],
+          "web3-testing": true
+        }
+      },
+      "testing-qa": {
+        "everything": {
+          "command": "npx",
+          "args": ["-y", "@modelcontextprotocol/server-everything"],
+          "autoApprove": ["echo", "add", "longRunningOperation"],
+          "web3-testing": true
+        }
+      }
+    }
+  }
+}
+```
+
+## 🔄 AUTOMATIC SERVICE SWITCHING
+
+### Context-Based Service Switching
+```mermaid
+graph TD
+    Task["Web3 Task Detected"] --> Analyze["Analyze Task Context"]
+    
+    Analyze --> SmartContract["Smart Contract<br>Development"]
+    Analyze --> Frontend["Frontend<br>Development"]
+    Analyze --> Testing["Testing &<br>QA"]
+    Analyze --> Deployment["Deployment &<br>DevOps"]
+    
+    SmartContract --> ActivateSC["Activate:<br>• Filesystem<br>• Context7<br>• Sequential Thinking<br>• Security Scanner"]
+    
+    Frontend --> ActivateFE["Activate:<br>• Filesystem<br>• Fetch<br>• Playwright<br>• Context7"]
+    
+    Testing --> ActivateTest["Activate:<br>• Filesystem<br>• Everything<br>• Sequential Thinking<br>• Gas Tracker"]
+    
+    Deployment --> ActivateDeploy["Activate:<br>• Filesystem<br>• Fetch<br>• Deploy Manager<br>• Security Scanner"]
+    
+    ActivateSC --> Configure["Configure Services<br>for Context"]
+    ActivateFE --> Configure
+    ActivateTest --> Configure
+    ActivateDeploy --> Configure
+```
+
+### Service Switching Implementation
+```javascript
+// Automatic MCP service switching based on Web3 context
+class Web3MCPSwitch {
+  constructor() {
+    this.activeServices = new Set();
+    this.contextHistory = [];
+  }
+  
+  switchToContext(context) {
+    const requiredServices = this.getRequiredServices(context);
+    const currentServices = Array.from(this.activeServices);
+    
+    // Deactivate unused services
+    currentServices
+      .filter(service => !requiredServices.includes(service))
+      .forEach(service => this.deactivateService(service));
+    
+    // Activate required services
+    requiredServices
+      .filter(service => !this.activeServices.has(service))
+      .forEach(service => this.activateService(service));
+    
+    this.contextHistory.push({
+      context,
+      services: requiredServices,
+      timestamp: Date.now()
+    });
+  }
+  
+  getRequiredServices(context) {
+    const serviceMap = {
+      'smart-contract': ['filesystem', 'context7', 'sequential-thinking'],
+      'frontend': ['filesystem', 'fetch', 'playwright', 'context7'],
+      'testing': ['filesystem', 'everything', 'sequential-thinking'],
+      'deployment': ['filesystem', 'fetch', 'security-scanner'],
+      'security-audit': ['filesystem', 'context7', 'security-scanner', 'sequential-thinking']
+    };
+    
+    return serviceMap[context] || ['filesystem'];
+  }
+}
+```
+
+## 🎯 WEB3-SPECIFIC MCP USE CASES
+
+### Smart Contract Development
+```javascript
+// MCP services for smart contract development
+const smartContractMCP = {
+  filesystem: {
+    purpose: "Contract file management",
+    autoApprove: ["read_text_file", "search_files"],
+    web3Paths: ["contracts/", "test/", "scripts/"]
+  },
+  context7: {
+    purpose: "Library documentation lookup",
+    autoApprove: ["resolve-library-id", "get-library-docs"],
+    libraries: ["@openzeppelin/contracts", "forge-std", "solmate"]
+  },
+  sequentialThinking: {
+    purpose: "Security analysis and gas optimization",
+    autoApprove: ["sequentialthinking"],
+    useCases: ["vulnerability-analysis", "gas-optimization", "architecture-review"]
+  }
+};
+```
+
+### Frontend Development
+```javascript
+// MCP services for Web3 frontend development
+const frontendMCP = {
+  filesystem: {
+    purpose: "Frontend file management",
+    autoApprove: ["read_text_file", "list_directory"],
+    web3Paths: ["frontend/src/", "shared/", "components/"]
+  },
+  fetch: {
+    purpose: "API calls and data fetching",
+    autoApprove: ["fetch_url", "fetch_content"],
+    endpoints: ["blockchain-explorers", "price-apis", "metadata-apis"]
+  },
+  playwright: {
+    purpose: "Web3 UI testing",
+    autoApprove: ["navigate_to_url", "take_screenshot", "snapshot"],
+    testScenarios: ["wallet-connection", "transaction-flow", "error-handling"]
+  }
+};
+```
+
+## 📊 MCP SERVICE MONITORING
+
+### Service Health Monitoring
+```javascript
+// Monitor MCP service health and performance
+class Web3MCPMonitor {
+  constructor() {
+    this.metrics = {
+      serviceUptime: {},
+      responseTime: {},
+      errorRate: {},
+      usageCount: {}
+    };
+  }
+  
+  trackServiceUsage(service, operation, duration, success) {
+    this.metrics.usageCount[service] = (this.metrics.usageCount[service] || 0) + 1;
+    this.metrics.responseTime[service] = this.metrics.responseTime[service] || [];
+    this.metrics.responseTime[service].push(duration);
+    
+    if (!success) {
+      this.metrics.errorRate[service] = (this.metrics.errorRate[service] || 0) + 1;
+    }
+  }
+  
+  getServiceHealth(service) {
+    const uptime = this.metrics.serviceUptime[service] || 100;
+    const avgResponseTime = this.calculateAverageResponseTime(service);
+    const errorRate = this.calculateErrorRate(service);
+    
+    return {
+      uptime,
+      avgResponseTime,
+      errorRate,
+      status: this.determineStatus(uptime, avgResponseTime, errorRate)
+    };
+  }
+}
+```
+
+## 🔧 WEB3 MCP CONFIGURATION TEMPLATE
+
+### Complete Web3 MCP Configuration
+```json
+{
+  "mcpServers": {
+    "filesystem": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-filesystem", "./"],
+      "disabled": false,
+      "autoApprove": [
+        "read_text_file",
+        "read_media_file",
+        "list_directory",
+        "list_directory_with_sizes",
+        "directory_tree",
+        "search_files"
+      ],
+      "web3-optimized": true
+    },
+    "fetch": {
+      "command": "npx",
+      "args": ["-y", "@kazuph/mcp-fetch"],
+      "disabled": false,
+      "autoApprove": ["fetch_url", "fetch_content"],
+      "web3-endpoints": [
+        "https://api.etherscan.io/",
+        "https://api.polygonscan.com/",
+        "https://api.basescan.org/"
+      ]
+    },
+    "context7": {
+      "command": "npx",
+      "args": ["-y", "@upstash/context7-mcp@latest"],
+      "env": {
+        "NODE_OPTIONS": "--max-old-space-size=2048"
+      },
+      "disabled": false,
+      "autoApprove": ["resolve-library-id", "get-library-docs"],
+      "web3-libraries": ["ethers", "wagmi", "viem", "web3", "@openzeppelin/contracts"]
+    },
+    "sequential-thinking": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-sequential-thinking"],
+      "env": {
+        "NODE_OPTIONS": "--max-old-space-size=1024"
+      },
+      "disabled": false,
+      "autoApprove": ["sequentialthinking"],
+      "web3-use-cases": [
+        "smart-contract-analysis",
+        "gas-optimization",
+        "security-review",
+        "architecture-design"
+      ]
+    },
+    "playwright": {
+      "command": "npx",
+      "args": ["-y", "@playwright/mcp"],
+      "disabled": false,
+      "autoApprove": ["navigate_to_url", "take_screenshot", "snapshot", "wait_for"],
+      "web3-testing": true
+    },
+    "everything": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-everything"],
+      "disabled": false,
+      "autoApprove": [
+        "echo",
+        "add",
+        "longRunningOperation",
+        "printEnv",
+        "getTinyImage",
+        "annotatedMessage"
+      ],
+      "web3-testing": true
+    }
+  }
+}
+```
+
+## 📝 WEB3 MCP STATUS REPORT
+
+```
+╔═════════════════ 🔧 WEB3 MCP STATUS ═════════════════╗
+│                                                     │
+│  🚀 Active Services: [List of active services]      │
+│  📊 Service Health: [Overall health status]         │
+│  🔄 Auto-Switching: [Enabled/Disabled]              │
+│  📈 Performance: [Response times and metrics]       │
+│  🎯 Context: [Current development context]          │
+│  ⚡ Optimizations: [Applied optimizations]          │
+│                                                     │
+│  ✅ Web3 MCP Integration Ready                      │
+╚═════════════════════════════════════════════════════╝
+```

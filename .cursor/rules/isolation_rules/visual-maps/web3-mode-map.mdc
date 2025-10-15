@@ -1,0 +1,485 @@
+---
+description: Web3-optimized mode mapping with blockchain-specific workflows
+globs: web3-mode-map.mdc
+alwaysApply: false
+---
+
+# WEB3 MODE MAP
+
+> **TL;DR:** Web3-optimized mode mapping that provides specialized workflows for blockchain development, smart contract creation, and Web3 integration with automatic MCP service switching.
+
+## 🌐 WEB3 MODE ARCHITECTURE
+
+```mermaid
+graph TD
+    subgraph "Web3 Development Modes"
+        VAN["VAN<br>Web3 Initialization"]
+        PLAN["PLAN<br>Web3 Architecture"]
+        CREATIVE["CREATIVE<br>Web3 Design"]
+        IMPLEMENT["IMPLEMENT<br>Web3 Development"]
+        QA["QA<br>Web3 Testing"]
+        DEPLOY["DEPLOY<br>Web3 Deployment"]
+        REFLECT["REFLECT<br>Web3 Review"]
+    end
+    
+    subgraph "Web3-Specific Modes"
+        FORGE["FORGE<br>Smart Contracts"]
+        FRONTEND["FRONTEND<br>Web3 UI"]
+        SECURITY["SECURITY<br>Audit & Review"]
+        GAS["GAS<br>Optimization"]
+    end
+    
+    subgraph "MCP Services"
+        Filesystem["Filesystem<br>MCP"]
+        Fetch["Fetch<br>MCP"]
+        Context7["Context7<br>MCP"]
+        Thinking["Sequential<br>Thinking"]
+        Playwright["Playwright<br>MCP"]
+    end
+    
+    VAN --> PLAN
+    PLAN --> CREATIVE
+    CREATIVE --> IMPLEMENT
+    IMPLEMENT --> QA
+    QA --> DEPLOY
+    DEPLOY --> REFLECT
+    
+    IMPLEMENT --> FORGE
+    IMPLEMENT --> FRONTEND
+    QA --> SECURITY
+    QA --> GAS
+    
+    VAN --> Filesystem
+    PLAN --> Context7
+    CREATIVE --> Thinking
+    IMPLEMENT --> Filesystem
+    QA --> Playwright
+    DEPLOY --> Fetch
+```
+
+## 🚀 WEB3 VAN MODE - INITIALIZATION
+
+### Web3-Specific Initialization Process
+```mermaid
+graph TD
+    Start["Web3 VAN Init"] --> Platform["Detect Web3<br>Platform"]
+    Platform --> Tools["Detect Blockchain<br>Development Tools"]
+    Tools --> Libraries["Detect Web3<br>Libraries"]
+    Libraries --> MCP["Configure MCP<br>Services"]
+    MCP --> Security["Assess Security<br>Requirements"]
+    Security --> Gas["Check Gas<br>Optimization Needs"]
+    Gas --> Complete["Web3 VAN<br>Complete"]
+    
+    style Start fill:#4da6ff,stroke:#0066cc,color:white
+    style Complete fill:#10b981,stroke:#059669,color:white
+```
+
+### Web3 VAN Checkpoints
+```
+✓ WEB3 VAN CHECKPOINT
+- Blockchain tools detected? [Foundry/Hardhat/Truffle]
+- Web3 libraries identified? [ethers/wagmi/viem/web3]
+- MCP services configured? [Filesystem/Fetch/Context7]
+- Security level assessed? [Low/Medium/High]
+- Gas optimization needed? [Yes/No]
+- Development environment ready? [Yes/No]
+
+→ If all YES: Web3 development environment ready
+→ If any NO: Complete setup requirements
+```
+
+## 📋 WEB3 PLAN MODE - ARCHITECTURE
+
+### Web3 Architecture Planning
+```mermaid
+graph TD
+    Plan["Web3 Plan Mode"] --> Analyze["Analyze Web3<br>Requirements"]
+    Analyze --> Architecture["Design System<br>Architecture"]
+    Architecture --> Contracts["Plan Smart<br>Contracts"]
+    Contracts --> Frontend["Plan Frontend<br>Integration"]
+    Frontend --> Security["Plan Security<br>Measures"]
+    Security --> Gas["Plan Gas<br>Optimization"]
+    Gas --> Testing["Plan Testing<br>Strategy"]
+    Testing --> Deploy["Plan Deployment<br>Strategy"]
+    Deploy --> Complete["Web3 Plan<br>Complete"]
+    
+    style Plan fill:#ffa64d,stroke:#cc7a30,color:white
+    style Complete fill:#10b981,stroke:#059669,color:white
+```
+
+### Web3 Plan Templates
+```markdown
+## WEB3 PROJECT PLAN
+
+### Smart Contract Architecture
+- **Contract Structure**: [List of contracts]
+- **Inheritance**: [OpenZeppelin/other libraries]
+- **Security Patterns**: [Reentrancy guards, access controls]
+- **Gas Optimization**: [Optimization strategies]
+
+### Frontend Integration
+- **Wallet Support**: [MetaMask, WalletConnect, etc.]
+- **Network Support**: [Ethereum, Polygon, Base, etc.]
+- **UI Framework**: [React, Next.js, etc.]
+- **State Management**: [Wagmi, Zustand, etc.]
+
+### Security Considerations
+- **Audit Requirements**: [Internal/External audit]
+- **Testing Strategy**: [Unit/Integration/E2E tests]
+- **Vulnerability Assessment**: [Common vulnerabilities]
+- **Access Controls**: [Role-based permissions]
+
+### Deployment Strategy
+- **Testnet Deployment**: [Goerli, Sepolia, etc.]
+- **Mainnet Deployment**: [Ethereum, Polygon, etc.]
+- **Verification**: [Contract verification process]
+- **Monitoring**: [Event monitoring, alerts]
+```
+
+## 🎨 WEB3 CREATIVE MODE - DESIGN
+
+### Web3 Design Decision Process
+```mermaid
+graph TD
+    Creative["Web3 Creative Mode"] --> Problem["Define Web3<br>Problem"]
+    Problem --> Options["Explore Design<br>Options"]
+    Options --> Security["Security<br>Analysis"]
+    Security --> Gas["Gas Optimization<br>Analysis"]
+    Gas --> UX["User Experience<br>Design"]
+    UX --> Integration["Integration<br>Design"]
+    Integration --> Decision["Make Design<br>Decision"]
+    Decision --> Guidelines["Document<br>Guidelines"]
+    Guidelines --> Complete["Web3 Creative<br>Complete"]
+    
+    style Creative fill:#d971ff,stroke:#a33bc2,color:white
+    style Complete fill:#10b981,stroke:#059669,color:white
+```
+
+### Web3 Design Decision Template
+```markdown
+## WEB3 DESIGN DECISION
+
+### Problem Statement
+[Clear description of the Web3 problem to solve]
+
+### Design Options
+1. **Option A**: [Description]
+   - Security: [High/Medium/Low]
+   - Gas Cost: [High/Medium/Low]
+   - Complexity: [High/Medium/Low]
+   - User Experience: [Excellent/Good/Fair]
+
+2. **Option B**: [Description]
+   - Security: [High/Medium/Low]
+   - Gas Cost: [High/Medium/Low]
+   - Complexity: [High/Medium/Low]
+   - User Experience: [Excellent/Good/Fair]
+
+### Analysis
+[Detailed analysis of each option considering Web3-specific factors]
+
+### Decision
+[Selected option with justification]
+
+### Implementation Guidelines
+[Specific guidelines for implementing the chosen design]
+```
+
+## 🔨 WEB3 IMPLEMENT MODE - DEVELOPMENT
+
+### Web3 Implementation Workflow
+```mermaid
+graph TD
+    Implement["Web3 Implement Mode"] --> Choose["Choose Implementation<br>Type"]
+    
+    Choose --> SmartContract["Smart Contract<br>Development"]
+    Choose --> Frontend["Frontend<br>Development"]
+    Choose --> Integration["Integration<br>Development"]
+    
+    SmartContract --> Forge["Use Foundry<br>Tools"]
+    SmartContract --> Hardhat["Use Hardhat<br>Tools"]
+    
+    Frontend --> React["React/Next.js<br>Development"]
+    Frontend --> Vue["Vue.js<br>Development"]
+    
+    Integration --> Wallet["Wallet<br>Integration"]
+    Integration --> API["Blockchain API<br>Integration"]
+    
+    Forge --> Test["Test Smart<br>Contracts"]
+    Hardhat --> Test
+    React --> Test
+    Vue --> Test
+    Wallet --> Test
+    API --> Test
+    
+    Test --> Complete["Web3 Implement<br>Complete"]
+    
+    style Implement fill:#4dbb5f,stroke:#36873f,color:white
+    style Complete fill:#10b981,stroke:#059669,color:white
+```
+
+### Web3 Implementation Templates
+
+#### Smart Contract Implementation
+```solidity
+// Web3 Smart Contract Template
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.19;
+
+import "@openzeppelin/contracts/security/ReentrancyGuard.sol";
+import "@openzeppelin/contracts/access/Ownable.sol";
+
+contract Web3Template is ReentrancyGuard, Ownable {
+    // State variables
+    uint256 public totalSupply;
+    mapping(address => uint256) public balances;
+    
+    // Events
+    event Transfer(address indexed from, address indexed to, uint256 value);
+    
+    // Functions
+    function transfer(address to, uint256 amount) external nonReentrant {
+        require(balances[msg.sender] >= amount, "Insufficient balance");
+        balances[msg.sender] -= amount;
+        balances[to] += amount;
+        emit Transfer(msg.sender, to, amount);
+    }
+}
+```
+
+#### Frontend Integration
+```typescript
+// Web3 Frontend Integration Template
+import { useAccount, useConnect, useDisconnect } from 'wagmi';
+import { useContractRead, useContractWrite } from 'wagmi';
+import { parseEther } from 'viem';
+
+export function Web3Component() {
+  const { address, isConnected } = useAccount();
+  const { connect, connectors } = useConnect();
+  const { disconnect } = useDisconnect();
+  
+  const { data: balance } = useContractRead({
+    address: '0x...',
+    abi: contractABI,
+    functionName: 'balanceOf',
+    args: [address],
+  });
+  
+  const { write: transfer } = useContractWrite({
+    address: '0x...',
+    abi: contractABI,
+    functionName: 'transfer',
+  });
+  
+  return (
+    <div>
+      {isConnected ? (
+        <div>
+          <p>Address: {address}</p>
+          <p>Balance: {balance?.toString()}</p>
+          <button onClick={() => disconnect()}>Disconnect</button>
+        </div>
+      ) : (
+        <button onClick={() => connect({ connector: connectors[0] })}>
+          Connect Wallet
+        </button>
+      )}
+    </div>
+  );
+}
+```
+
+## 🧪 WEB3 QA MODE - TESTING
+
+### Web3 Testing Strategy
+```mermaid
+graph TD
+    QA["Web3 QA Mode"] --> Unit["Unit Testing"]
+    QA --> Integration["Integration Testing"]
+    QA --> Security["Security Testing"]
+    QA --> Gas["Gas Testing"]
+    QA --> E2E["End-to-End Testing"]
+    
+    Unit --> SmartContract["Smart Contract<br>Unit Tests"]
+    Unit --> Frontend["Frontend<br>Unit Tests"]
+    
+    Integration --> Wallet["Wallet<br>Integration Tests"]
+    Integration --> API["Blockchain API<br>Tests"]
+    
+    Security --> Audit["Security<br>Audit"]
+    Security --> Vulnerability["Vulnerability<br>Scanning"]
+    
+    Gas --> Optimization["Gas<br>Optimization Tests"]
+    Gas --> Cost["Cost<br>Analysis"]
+    
+    E2E --> UserFlow["User Flow<br>Tests"]
+    E2E --> Transaction["Transaction<br>Tests"]
+    
+    SmartContract --> Complete["Web3 QA<br>Complete"]
+    Frontend --> Complete
+    Wallet --> Complete
+    API --> Complete
+    Audit --> Complete
+    Optimization --> Complete
+    UserFlow --> Complete
+    Transaction --> Complete
+    
+    style QA fill:#ff5555,stroke:#cc0000,color:white
+    style Complete fill:#10b981,stroke:#059669,color:white
+```
+
+### Web3 Testing Templates
+
+#### Smart Contract Testing
+```javascript
+// Web3 Smart Contract Test Template
+import { expect } from "chai";
+import { ethers } from "hardhat";
+
+describe("Web3Template", function () {
+  let web3Template;
+  let owner;
+  let addr1;
+  let addr2;
+
+  beforeEach(async function () {
+    [owner, addr1, addr2] = await ethers.getSigners();
+    const Web3Template = await ethers.getContractFactory("Web3Template");
+    web3Template = await Web3Template.deploy();
+    await web3Template.deployed();
+  });
+
+  describe("Transfer", function () {
+    it("Should transfer tokens correctly", async function () {
+      await web3Template.transfer(addr1.address, 100);
+      expect(await web3Template.balances(addr1.address)).to.equal(100);
+    });
+
+    it("Should revert on insufficient balance", async function () {
+      await expect(
+        web3Template.transfer(addr1.address, 100)
+      ).to.be.revertedWith("Insufficient balance");
+    });
+  });
+});
+```
+
+#### Frontend Testing
+```javascript
+// Web3 Frontend Test Template
+import { render, screen, fireEvent } from '@testing-library/react';
+import { Web3Provider } from './Web3Provider';
+import { Web3Component } from './Web3Component';
+
+describe('Web3Component', () => {
+  it('should connect wallet', async () => {
+    render(
+      <Web3Provider>
+        <Web3Component />
+      </Web3Provider>
+    );
+    
+    const connectButton = screen.getByText('Connect Wallet');
+    fireEvent.click(connectButton);
+    
+    expect(await screen.findByText('Address:')).toBeInTheDocument();
+  });
+});
+```
+
+## 🚀 WEB3 DEPLOY MODE - DEPLOYMENT
+
+### Web3 Deployment Process
+```mermaid
+graph TD
+    Deploy["Web3 Deploy Mode"] --> Prepare["Prepare for<br>Deployment"]
+    Prepare --> Testnet["Deploy to<br>Testnet"]
+    Testnet --> Verify["Verify<br>Contracts"]
+    Verify --> Test["Test on<br>Testnet"]
+    Test --> Mainnet["Deploy to<br>Mainnet"]
+    Mainnet --> Monitor["Monitor<br>Deployment"]
+    Monitor --> Complete["Web3 Deploy<br>Complete"]
+    
+    style Deploy fill:#4dbbbb,stroke:#368787,color:white
+    style Complete fill:#10b981,stroke:#059669,color:white
+```
+
+### Web3 Deployment Templates
+
+#### Foundry Deployment
+```bash
+#!/bin/bash
+# Web3 Foundry Deployment Script
+
+# Deploy to testnet
+forge script script/Deploy.s.sol --rpc-url $TESTNET_RPC_URL --broadcast --verify
+
+# Deploy to mainnet
+forge script script/Deploy.s.sol --rpc-url $MAINNET_RPC_URL --broadcast --verify
+```
+
+#### Hardhat Deployment
+```javascript
+// Web3 Hardhat Deployment Script
+const { ethers } = require("hardhat");
+
+async function main() {
+  const Web3Template = await ethers.getContractFactory("Web3Template");
+  const web3Template = await Web3Template.deploy();
+  
+  await web3Template.deployed();
+  
+  console.log("Web3Template deployed to:", web3Template.address);
+  
+  // Verify contract
+  await hre.run("verify:verify", {
+    address: web3Template.address,
+    constructorArguments: [],
+  });
+}
+
+main().catch((error) => {
+  console.error(error);
+  process.exitCode = 1;
+});
+```
+
+## 📊 WEB3 MODE TRANSITIONS
+
+### Automatic Mode Switching
+```mermaid
+graph TD
+    Current["Current Mode"] --> Analyze["Analyze Task<br>Context"]
+    Analyze --> SmartContract["Smart Contract<br>Task?"]
+    Analyze --> Frontend["Frontend<br>Task?"]
+    Analyze --> Testing["Testing<br>Task?"]
+    Analyze --> Deployment["Deployment<br>Task?"]
+    
+    SmartContract --> Forge["Switch to<br>FORGE Mode"]
+    Frontend --> FrontendMode["Switch to<br>FRONTEND Mode"]
+    Testing --> QAMode["Switch to<br>QA Mode"]
+    Deployment --> DeployMode["Switch to<br>DEPLOY Mode"]
+    
+    Forge --> MCP["Configure MCP<br>for Smart Contracts"]
+    FrontendMode --> MCP
+    QAMode --> MCP
+    DeployMode --> MCP
+```
+
+## 📝 WEB3 MODE STATUS REPORT
+
+```
+╔═════════════════ 🌐 WEB3 MODE STATUS ═════════════════╗
+│                                                     │
+│  🎯 Current Mode: [VAN/PLAN/CREATIVE/IMPLEMENT/QA]   │
+│  🔧 Active MCP Services: [List of active services]   │
+│  📊 Development Stage: [Planning/Development/Testing] │
+│  🔐 Security Level: [Low/Medium/High]                │
+│  ⛽ Gas Optimization: [Enabled/Disabled]             │
+│  🧪 Testing Status: [Not Started/In Progress/Done]   │
+│  🚀 Deployment Status: [Not Ready/Ready/Deployed]    │
+│                                                     │
+│  ✅ Web3 Development Environment Active              │
+╚═════════════════════════════════════════════════════╝
+```
