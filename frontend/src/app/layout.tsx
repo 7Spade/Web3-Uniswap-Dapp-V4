@@ -1,30 +1,29 @@
-import type {Metadata} from 'next';
-import './globals.css';
-import { Toaster } from "../components/ui/toaster";
-import { Web3Provider } from "../components/providers/Web3Provider";
+import type { ReactNode } from "react";
+
+import "@/styles/globals.css";
+import type { Metadata } from "next";
+import { Open_Sans } from "next/font/google";
+
+import "@rainbow-me/rainbowkit/styles.css";
+import { Providers } from "./providers";
+
+const open_sans = Open_Sans({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: 'DEX Explorer',
-  description: 'A Web3 DApp to explore and swap tokens on Uniswap V4, with an AI-powered transaction simulator.',
+  title: "Next-Web3-Boilerplate",
+  applicationName: "Next Web3 Boilerplate",
+  description: "Next.js Web3 boilerplate built on Wagmi, Viem, and Rainbow",
+  authors: { name: "Pedrojok01", url: "https://github.com/Pedrojok01/Next-Web3-Boilerplate" },
+  icons: "favicon.ico",
+  manifest: "site.webmanifest",
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: Readonly<{ children: ReactNode }>) {
   return (
-    <html lang="en" className="dark">
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
-        <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet" />
-      </head>
-      <body className="font-body antialiased">
-        <Web3Provider>
-          {children}
-          <Toaster />
-        </Web3Provider>
+    <html lang="en" suppressHydrationWarning>
+      <head />
+      <body className={open_sans.className}>
+        <Providers>{children}</Providers>
       </body>
     </html>
   );
