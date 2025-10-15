@@ -8,7 +8,7 @@ import Image from "next/image";
 import { useAddressInput, useNotify } from "@/hooks";
 
 import Jazzicons from "./Jazzicons";
-import warningImage from "../../../public/img/warning.svg";
+import warningImage from "/img/warning.svg";
 
 interface AddressInputProps {
   receiver: string;
